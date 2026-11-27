@@ -1,0 +1,153 @@
+{
+  "broker": "中信建投证券",
+  "series": "流动性周观察",
+  "series_role": "flow",
+  "title": "流动性周观察11月第4期：ETF资金流入超过1800亿元",
+  "report_date": "2026-11-23",
+  "week_mon": "2026-11-23",
+  "is_core": false,
+  "report_id": "9f7bcad01d932637d09bc5de429a8bc7925254348fbf1cd4b4df4e660b81dbec",
+  "total_pages": 24,
+  "report_meta": {
+    "archetype": "liquidity_crowding",
+    "one_line_takeaway": "股票型ETF单周净流入1872.4亿元，两融资金同期净流出1071.7亿元；报告记录了资金渠道分化，未给出大势或配置判断。"
+  },
+  "market_stance_slot": null,
+  "ddm_driver_slots": {
+    "earnings_macro_slot": null,
+    "liquidity_chip_slot": null,
+    "policy_risk_slot": null
+  },
+  "style_slots": {
+    "size_style_slot": null,
+    "valuation_style_slot": null
+  },
+  "sector_allocation_slot": {
+    "overweight_lines": [],
+    "cautious_lines": []
+  },
+  "data_nuggets_slot": [
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": true,
+      "evidence_pids": [
+        "P2-S2",
+        "P8-S1",
+        "P12-S1",
+        "P13-S3"
+      ],
+      "forward_implication": "可跟踪ETF净申购能否延续、两融参与度能否企稳；本周两类资金方向相反，不能仅凭ETF流入认定全市场风险偏好回升。",
+      "metric_phrase": "11月16—20日，股票型ETF净流入1872.4亿元，两融资金净流出1071.7亿元，两融交易额占比降至7.6%。",
+      "evidence": [
+        {
+          "pid": "P2-S2",
+          "page": 2,
+          "heading": "分析师：黄文涛 / 内容摘要",
+          "text": "核心观点：微观资金面方面，新成立偏股型基金54亿份，股票型ETF资金净流入1872亿元，其中沪深300+双创ETF接近1500亿元；两融\n资金净流入-1072亿元，交易额占比7.6%，环比有所下行，流出较多的行业主要有：电子、电力设备、机械设备；9月私募证券投资基金\n备案数量和规模环比下行；三度保险资金运用余额增长8127亿元，人身险公司股票基金配比16.07%，财产险公司股票基金配比15.42%；\n南向资金净流入140亿元，今年以来净流入3800亿元。\n宏观流动性\n R007利率1.41%，较前一周变动0.0B",
+          "truncated": true
+        },
+        {
+          "pid": "P8-S1",
+          "page": 8,
+          "heading": "分析师：黄文涛 / 图表：中美利差和人民币汇率",
+          "text": "公募资金 – ETF资金\n8\n 上周股票型ETF资金净流入1872.4亿元。\n图表：股票型ETF资金累计净流入（亿元）\n资料来源：Wind ，中信建投\n-2,000\n0\n2,000\n4,000\n6,000\n8,000\n10,000\n12,000\n14,000\n16,000\n18,000\n2023-01\n2023-02\n2023-03\n2023-04\n2023-05\n2023-06\n2023-07\n2023-08\n2023-09\n2023-10\n2023-11\n2023-12\n2024-01\n2024-02\n202",
+          "truncated": true
+        },
+        {
+          "pid": "P12-S1",
+          "page": 12,
+          "heading": "分析师：黄文涛 / 6",
+          "text": "两融资金 – 净流入\n12\n 上周两融资金净流入-1071.7亿元，交易额占比7.6%，环比有所下行。\n图表 ：两融资金净流入\n资料来源：Wind ，中信建投\n-2,000\n-1,500\n-1,000\n-500\n0\n500\n1,000\n1,500\n两融资金净流入(亿元)\n下载日志已记录，仅供内部参考",
+          "truncated": false
+        },
+        {
+          "pid": "P13-S3",
+          "page": 13,
+          "heading": "分析师：黄文涛 / 图表：两融交易占比",
+          "text": "资料来源：Wind ，中信建投\n0\n5\n10\n15\n20\n0\n5,000\n10,000\n15,000\n20,000\n2014-01 2015-01 2016-01 2017-01 2018-01 2019-01 2020-01 2021-01 2022-01 2023-01 2024-01 2025-01 2026-01\n两融交易额(亿元) 两融交易额占A股成交额(%右轴)\n下载日志已记录，仅供内部参考",
+          "truncated": false
+        }
+      ],
+      "primary_page": 2
+    },
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": true,
+      "evidence_pids": [
+        "P9-S1"
+      ],
+      "forward_implication": "可跟踪净申购是否扩散到其他宽基；当周宽基ETF并非普遍获增持，报告也未据此提出风格配置建议。",
+      "metric_phrase": "沪深300ETF与双创ETF合计净流入1464.7亿元，A500ETF同期净流出79.2亿元。",
+      "evidence": [
+        {
+          "pid": "P9-S1",
+          "page": 9,
+          "heading": "分析师：黄文涛 / 图表：中美利差和人民币汇率",
+          "text": "公募资金 – ETF资金 – 宽基型\n9\n 沪深300ETF净流入1024.4亿元，双创ETF净流入440.3亿元，A500ETF净流入-79.2亿元。\n 上证50ETF净流入226.6亿元，中证500ETF净流入185.4亿元，中证1000ETF净流入106.3亿元。\n图表 ：宽基ETF资金累计净流入（亿元） 图表：宽基ETF资金累计净流入（亿元）\n资料来源：Wind ，中信建投资料来源：Wind ，中信建投\n-4,000\n-2,000\n0\n2,000\n4,000\n6,000\n8,000\n2023-01\n20",
+          "truncated": true
+        }
+      ],
+      "primary_page": 9
+    },
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": true,
+      "evidence_pids": [
+        "P6-S2",
+        "P6-S3",
+        "P6-S4"
+      ],
+      "forward_implication": "可继续观察利差变化是否传导至汇率；本周汇率反应有限，报告未据此外推后续汇率或外资流向。",
+      "metric_phrase": "2年期美债减中债利差单周收窄25.1个基点，美元兑人民币汇率仅变动0.3个基点（沿用报告口径）。",
+      "evidence": [
+        {
+          "pid": "P6-S2",
+          "page": 6,
+          "heading": "分析师：黄文涛 / 中美利差、人民币汇率",
+          "text": "6\n 2Y中美利差变动-25.1BP；美元兑人民币汇率变动0.3BP。",
+          "truncated": false
+        },
+        {
+          "pid": "P6-S3",
+          "page": 6,
+          "heading": "分析师：黄文涛 / 图表：中美利差和人民币汇率",
+          "text": "图表：中美利差和人民币汇率",
+          "truncated": false
+        },
+        {
+          "pid": "P6-S4",
+          "page": 6,
+          "heading": "分析师：黄文涛 / 图表：中美利差和人民币汇率",
+          "text": "资料来源：Wind ，中信建投\n6.2\n6.4\n6.6\n6.8\n7.0\n7.2\n7.4\n7.6\n-3.0\n-2.0\n-1.0\n0.0\n1.0\n2.0\n3.0\n4.0\n2020-01 2020-07 2021-01 2021-07 2022-01 2022-07 2023-01 2023-07 2024-01 2024-07 2025-01 2025-07 2026-01 2026-07\n2Y美债-2Y中债 % 美元兑人民币(右轴)\n下载日志已记录，仅供内部参考",
+          "truncated": false
+        }
+      ],
+      "primary_page": 6
+    }
+  ],
+  "catalysts_slot": [
+    {
+      "event_title": "A股限售股解禁",
+      "evidence_pids": [
+        "P21-S2"
+      ],
+      "scenario_impact": "全月解禁规模为1118亿元，报告列示占比为11.1%，但未说明分母。该规模仅供观察当月潜在股票供给，不代表报告发布后的剩余解禁量或实际减持额。",
+      "time_window": "2026年11月（全月）",
+      "evidence": [
+        {
+          "pid": "P21-S2",
+          "page": 21,
+          "heading": "分析师：黄文涛 / 限售解禁",
+          "text": "21\n 2026年11月限售解禁规模1118亿元，占比11.1%。\n图表 ：限售解禁规模和占比\n资料来源：Wind ，中信建投\n0%\n5%\n10%\n15%\n20%\n25%\n30%\n0\n1,000\n2,000\n3,000\n4,000\n5,000\n6,000\n2026-01 2026-02 2026-03 2026-04 2026-05 2026-06 2026-07 2026-08 2026-09 2026-10 2026-11 2026-12\n限售解禁规模(亿元) 规模占比(右轴)\n下载日志已记录，仅供内部参考",
+          "truncated": false
+        }
+      ]
+    }
+  ],
+  "golden_stocks_slot": [],
+  "risk_invalidator_slot": null,
+  "numeric_warnings": [],
+  "intercepted_slots": [],
+  "source_file": "6538868-中信建投-流动性周观察11月第4期：ETF资金流入超过1800亿元-261123.pdf",
+  "listing_pages": 24
+}
