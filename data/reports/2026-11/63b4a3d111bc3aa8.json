@@ -1,0 +1,256 @@
+{
+  "broker": "中金公司",
+  "series": "A股策略周报",
+  "series_role": "flagship",
+  "title": "中国策略简评：MSCI中国调整，新增3只、剔除38只",
+  "report_date": "2026-11-12",
+  "week_mon": "2026-11-09",
+  "is_core": true,
+  "report_id": "63b4a3d111bc3aa85a03ae258aaed6daf4239be379bc715926856f787f586689",
+  "total_pages": 1,
+  "report_meta": {
+    "archetype": "policy_event_flash",
+    "one_line_takeaway": "本期聚焦MSCI中国指数新增3只、剔除38只后的调仓冲击，而非更新上期行业配置；11月30日尾盘宜关注低流动性剔除股的被动卖压，但调仓方向不等于股价方向。"
+  },
+  "market_stance_slot": null,
+  "ddm_driver_slots": {
+    "earnings_macro_slot": null,
+    "liquidity_chip_slot": {
+      "canonical_topic": "other_specific_driver",
+      "claim_summary": "跟踪MSCI中国指数的被动资金预计在11月30日尾盘集中调仓；部分低流动性剔除股的被动卖出额相对日均成交额较大，交易冲击集中在个股，不构成全市场流动性方向判断。",
+      "direction": "neutral_watch",
+      "evidence_pids": [
+        "P1-S43",
+        "P1-S44",
+        "P1-S45",
+        "P1-S46",
+        "P1-S47",
+        "P1-S49"
+      ],
+      "vote_eligible": false,
+      "evidence": [
+        {
+          "pid": "P1-S43",
+          "page": 1,
+          "heading": "中国策略简评： / 38",
+          "text": "从交易和调仓角度，还需要结合个股的日均成交情况来判断其具体影响。基于当前\n1,186 \n亿美元规模（假设相当于当前",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S44",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "MSCI",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S45",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "中国指 数整体\n2.37 \n万亿美元市值的\n5%\n左右）的被动型基金追踪",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S46",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "MSCI",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S47",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "中国指 数的假设，并结合个股各自过去\n20 \n天的日均\n成交金额，我们测算，\n1\n）中通快递、海底捞、中国银河与华电新能所需交易时间都达到\n0.7 \n天左右。\n2\n）相反，建发国际集团、\n海天国际、中国飞鹤与同程旅行等由于被剔除所需交易被动资金流出时间都在\n8 \n天以上。",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S49",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "从时间安排上，上述所有调整将于\n11 \n月\n30 \n日收盘后实施。资金流向上，根据指 数调整的历史经验来看，被动型资金为了\n尽可能地减少对于指 数的追踪误差，通常会选在最后一天也就是北京时间\n11 \n月\n30\n日尾盘调仓，因此往往会看到权重变动较大个\n股成交的\n“\n异常\n”\n放大，特别是在尾盘。相比之下，主动型资金则并不存在这一约束，可以择机选择配置时点。我们建议关注部分\n流动性较差的个股潜在影响。",
+          "truncated": false
+        }
+      ]
+    },
+    "policy_risk_slot": null
+  },
+  "style_slots": {
+    "size_style_slot": null,
+    "valuation_style_slot": null
+  },
+  "sector_allocation_slot": {
+    "overweight_lines": [],
+    "cautious_lines": []
+  },
+  "data_nuggets_slot": [
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": false,
+      "evidence_pids": [
+        "P1-S41",
+        "P1-S43",
+        "P1-S44",
+        "P1-S45",
+        "P1-S46",
+        "P1-S47",
+        "P1-S49"
+      ],
+      "forward_implication": "所列剔除股的卖出规模相对自身流动性明显更大，尾盘调仓时更值得关注；折算天数并非实际调仓时长。",
+      "metric_phrase": "假设被动跟踪资金为1,186亿美元，按过去20个交易日日均成交额折算，中通快递、海底捞、中国银河和华电新能的预计被动买入额各约相当于0.7天成交额；建发国际集团、海天国际、中国飞鹤和同程旅行的预计被动卖出额各超过8天成交额。",
+      "evidence": [
+        {
+          "pid": "P1-S41",
+          "page": 1,
+          "heading": "中国策略简评： / 38",
+          "text": "潜在影响：关注对中通快递、海底捞、中国银河与华电新能等的正面影响；对建发国际集团、海天国际、中国飞鹤与同程\n旅行等的负面影响",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S43",
+          "page": 1,
+          "heading": "中国策略简评： / 38",
+          "text": "从交易和调仓角度，还需要结合个股的日均成交情况来判断其具体影响。基于当前\n1,186 \n亿美元规模（假设相当于当前",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S44",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "MSCI",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S45",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "中国指 数整体\n2.37 \n万亿美元市值的\n5%\n左右）的被动型基金追踪",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S46",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "MSCI",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S47",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "中国指 数的假设，并结合个股各自过去\n20 \n天的日均\n成交金额，我们测算，\n1\n）中通快递、海底捞、中国银河与华电新能所需交易时间都达到\n0.7 \n天左右。\n2\n）相反，建发国际集团、\n海天国际、中国飞鹤与同程旅行等由于被剔除所需交易被动资金流出时间都在\n8 \n天以上。",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S49",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "从时间安排上，上述所有调整将于\n11 \n月\n30 \n日收盘后实施。资金流向上，根据指 数调整的历史经验来看，被动型资金为了\n尽可能地减少对于指 数的追踪误差，通常会选在最后一天也就是北京时间\n11 \n月\n30\n日尾盘调仓，因此往往会看到权重变动较大个\n股成交的\n“\n异常\n”\n放大，特别是在尾盘。相比之下，主动型资金则并不存在这一约束，可以择机选择配置时点。我们建议关注部分\n流动性较差的个股潜在影响。",
+          "truncated": false
+        }
+      ],
+      "primary_page": 1
+    },
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": false,
+      "evidence_pids": [
+        "P1-S31",
+        "P1-S42",
+        "P1-S43",
+        "P1-S47"
+      ],
+      "forward_implication": "权重变化指示被动调仓方向，但个股交易冲击还取决于日均成交额，不能仅按权重变化排序。",
+      "metric_phrase": "阿里巴巴指数权重上调0.42个百分点，腾讯与新纳入的中际旭创（H股）各上调0.11个百分点；拼多多、晶泰控股、同程旅行等位居权重降幅前列，降幅介于0.08至0.17个百分点。",
+      "evidence": [
+        {
+          "pid": "P1-S31",
+          "page": 1,
+          "heading": "中国策略简评： / 3",
+          "text": "只成分股，港股\n1 \n只，\nA\n股\n2 \n只，分别为中际旭创（\nH\n股）、华电新能以及云南锗业。",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S42",
+          "page": 1,
+          "heading": "中国策略简评： / 38",
+          "text": "从绝对权重变化幅度来看，我们测算，受此次调整影响，新纳入的中际旭创等的权重增加排名靠前，权重增加\n0.11%\n。与\n此同时，此次阿里巴巴与腾讯的权重也分别抬升\n0.42%\n与\n0.11%\n。相反，拼多多、晶泰控股、同程旅行等因摊薄或被剔除影响，\n在指 数中权重的下降最大，从\n0.17%\n到\n0.08%\n不等。",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S43",
+          "page": 1,
+          "heading": "中国策略简评： / 38",
+          "text": "从交易和调仓角度，还需要结合个股的日均成交情况来判断其具体影响。基于当前\n1,186 \n亿美元规模（假设相当于当前",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S47",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "中国指 数的假设，并结合个股各自过去\n20 \n天的日均\n成交金额，我们测算，\n1\n）中通快递、海底捞、中国银河与华电新能所需交易时间都达到\n0.7 \n天左右。\n2\n）相反，建发国际集团、\n海天国际、中国飞鹤与同程旅行等由于被剔除所需交易被动资金流出时间都在\n8 \n天以上。",
+          "truncated": false
+        }
+      ],
+      "primary_page": 1
+    },
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": false,
+      "evidence_pids": [
+        "P1-S35"
+      ],
+      "forward_implication": "A股成分数量占多数，但指数权重主要集中在港股，不能用成分股数量推断被动资金规模，也不能据调整后权重判断A股权重较调整前升降。",
+      "metric_phrase": "调整后成分股由576只减至541只；A股有395只、占权重16.4%，港股有138只、占权重80.5%。",
+      "evidence": [
+        {
+          "pid": "P1-S35",
+          "page": 1,
+          "heading": "中国策略简评： / 38",
+          "text": "因此，调整后的成分股数量从\n576 \n只减少至\n541 \n只（\nA\n股\n395 \n只，权重\n16.4%\n；港股\n138 \n只，权重\n80.5%\n；中概股\n7 \n只，权\n重\n3.0%\n；\nB\n股\n1 \n只，权重\n0.1%\n）。",
+          "truncated": false
+        }
+      ],
+      "primary_page": 1
+    }
+  ],
+  "catalysts_slot": [
+    {
+      "event_title": "MSCI中国指数季度调整生效",
+      "evidence_pids": [
+        "P1-S49"
+      ],
+      "scenario_impact": "调整于收盘后实施；为降低跟踪误差，被动资金通常在当日尾盘集中调仓，权重变化较大的个股可能异常放量。主动资金不受同一时点约束。",
+      "time_window": "北京时间11月30日尾盘及收盘后",
+      "evidence": [
+        {
+          "pid": "P1-S49",
+          "page": 1,
+          "heading": "中国策略简评： / MSCI",
+          "text": "从时间安排上，上述所有调整将于\n11 \n月\n30 \n日收盘后实施。资金流向上，根据指 数调整的历史经验来看，被动型资金为了\n尽可能地减少对于指 数的追踪误差，通常会选在最后一天也就是北京时间\n11 \n月\n30\n日尾盘调仓，因此往往会看到权重变动较大个\n股成交的\n“\n异常\n”\n放大，特别是在尾盘。相比之下，主动型资金则并不存在这一约束，可以择机选择配置时点。我们建议关注部分\n流动性较差的个股潜在影响。",
+          "truncated": false
+        }
+      ]
+    }
+  ],
+  "golden_stocks_slot": [],
+  "risk_invalidator_slot": {
+    "risk_summary": "若套利资金在结果公布后已提前布局，实施日股价可能与被动调仓方向背离；实际表现取决于提前套利资金和被动资金的相对强弱，新纳入或权重上升的个股也可能在实施日下跌。",
+    "evidence_pids": [
+      "P1-S50"
+    ],
+    "evidence": [
+      {
+        "pid": "P1-S50",
+        "page": 1,
+        "heading": "中国策略简评： / MSCI",
+        "text": "股价影响上，待结果宣布后但在正式实施日之前，也会有部分套利资金根据正式结果布局相应个股，特别是那些此前市场\n未完全预测的意外结果。不过需要注意的是，虽然被动资金在调整正式实施日\n“\n必须\n”\n按照权重变化进行调仓，但这一期间股价实\n际变动却未必与权重调整方向一致，反而会更多受到提前套利资金与被动资金强弱对比影响，此前也不乏新纳入或权重增加个股\n调整实施日股价下跌的情形。\n仅供内部参考，请勿外传",
+        "truncated": false
+      }
+    ]
+  },
+  "numeric_warnings": [],
+  "intercepted_slots": [],
+  "source_file": "6529353-中金公司-中国策略简评：MSCI中国调整，新增3只、剔除38只-261112.pdf",
+  "listing_pages": 1
+}
