@@ -36,6 +36,40 @@ def percentile_rank(series: list[float], latest: float) -> float:
     return round((below / len(series)) * 100.0, 1)
 
 
+def _fetch_hs300_history(ak, cutoff_20w: str) -> list[dict]:
+    """Fetch HS300 daily close via AKShare 1.20+ interfaces with resilient source fallbacks."""
+    start_compact = cutoff_20w.replace("-", "")
+    attempts = [
+        ("index_zh_daily_sina", lambda fn: fn(symbol="sh000300")),
+        ("index_zh_daily_tx", lambda fn: fn(symbol="sh000300")),
+        ("index_zh_hist_em", lambda fn: fn(symbol="000300", period="daily", start_date=start_compact)),
+        ("index_zh_a_hist", lambda fn: fn(symbol="000300", period="daily", start_date=start_compact)),
+    ]
+    errors: list[str] = []
+    for fn_name, call in attempts:
+        fn = getattr(ak, fn_name, None)
+        if fn is None:
+            continue
+        try:
+            df = call(fn)
+            if df is None or df.empty:
+                continue
+            date_col = "日期" if "日期" in df.columns else "date"
+            close_col = "收盘" if "收盘" in df.columns else "close"
+            series = []
+            for _, row in df.iterrows():
+                d_str = str(row[date_col])[:10]
+                if d_str < cutoff_20w:
+                    continue
+                series.append({"date": d_str, "close": round(float(row[close_col]), 2)})
+            if series:
+                series.sort(key=lambda x: x["date"])
+                return series
+        except Exception as exc:
+            errors.append(f"{fn_name}:{type(exc).__name__}")
+    raise RuntimeError(f"HS300 history fetch failed ({', '.join(errors) or 'no_interface'})")
+
+
 def fetch_via_akshare() -> dict:
     import akshare as ak
 
@@ -43,12 +77,7 @@ def fetch_via_akshare() -> dict:
     cutoff_20w = (datetime.now(BEIJING).date() - timedelta(days=160)).isoformat()
 
     # 1) HS300 daily close for 12-week analyst trajectory overlay
-    hs300_df = ak.index_zh_a_hist(symbol="000300", period="daily", start_date=cutoff_20w.replace("-", ""))
-    hs300_series = []
-    for _, row in hs300_df.iterrows():
-        d_str = str(row["日期"])[:10]
-        hs300_series.append({"date": d_str, "close": round(float(row["收盘"]), 2)})
-    hs300_series.sort(key=lambda x: x["date"])
+    hs300_series = _fetch_hs300_history(ak, cutoff_20w)
 
     # 2) 31 Shenwan Level-1 daily turnover -> compute daily turnover share & 3Y percentile
     daily_sector_amt: dict[str, dict[str, float]] = {}
@@ -141,7 +170,10 @@ def main() -> int:
         fresh = fetch_via_akshare()
     except Exception as exc:
         if existing:
-            print(f"::warning::Market refresh skipped ({type(exc).__name__}); retaining as_of={existing.get('as_of')}")
+            print(
+                f"::warning::Market refresh skipped ({type(exc).__name__}: {str(exc)[:180]}); "
+                f"retaining as_of={existing.get('as_of')}"
+            )
             return 0
         raise
 
