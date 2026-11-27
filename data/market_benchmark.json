@@ -1,239 +1,555 @@
 {
-  "as_of": "2026-11-27",
-  "source_note": "申万一级行业日度成交额占比近3年分位 & 沪深300日线（演示初始基线，Actions运行后自动刷新实盘）",
-  "hs300_latest": 4018.6,
+  "as_of": "2026-11-16",
+  "source_note": "申万宏源一级行业日度成交占比近3年历史分位 & 沪深300日线",
+  "hs300_latest": 4063.06,
   "hs300_history": [
     {
+      "date": "2026-07-17",
+      "close": 4529.1
+    },
+    {
+      "date": "2026-07-20",
+      "close": 4598.32
+    },
+    {
+      "date": "2026-07-21",
+      "close": 4739.23
+    },
+    {
+      "date": "2026-07-22",
+      "close": 4717.24
+    },
+    {
+      "date": "2026-07-23",
+      "close": 4728.0
+    },
+    {
+      "date": "2026-07-24",
+      "close": 4649.19
+    },
+    {
+      "date": "2026-07-27",
+      "close": 4702.43
+    },
+    {
+      "date": "2026-07-28",
+      "close": 4569.52
+    },
+    {
+      "date": "2026-07-29",
+      "close": 4600.26
+    },
+    {
+      "date": "2026-07-30",
+      "close": 4549.72
+    },
+    {
+      "date": "2026-07-31",
+      "close": 4588.2
+    },
+    {
+      "date": "2026-08-03",
+      "close": 4543.18
+    },
+    {
+      "date": "2026-08-04",
+      "close": 4600.93
+    },
+    {
+      "date": "2026-08-05",
+      "close": 4658.15
+    },
+    {
+      "date": "2026-08-06",
+      "close": 4651.31
+    },
+    {
+      "date": "2026-08-07",
+      "close": 4694.44
+    },
+    {
+      "date": "2026-08-10",
+      "close": 4702.02
+    },
+    {
+      "date": "2026-08-11",
+      "close": 4663.79
+    },
+    {
+      "date": "2026-08-12",
+      "close": 4690.92
+    },
+    {
+      "date": "2026-08-13",
+      "close": 4663.95
+    },
+    {
+      "date": "2026-08-14",
+      "close": 4665.88
+    },
+    {
+      "date": "2026-08-17",
+      "close": 4741.1
+    },
+    {
+      "date": "2026-08-18",
+      "close": 4725.81
+    },
+    {
+      "date": "2026-08-19",
+      "close": 4588.7
+    },
+    {
+      "date": "2026-08-20",
+      "close": 4592.75
+    },
+    {
+      "date": "2026-08-21",
+      "close": 4618.9
+    },
+    {
+      "date": "2026-08-24",
+      "close": 4563.13
+    },
+    {
+      "date": "2026-08-25",
+      "close": 4552.03
+    },
+    {
+      "date": "2026-08-26",
+      "close": 4590.79
+    },
+    {
+      "date": "2026-08-27",
+      "close": 4630.28
+    },
+    {
+      "date": "2026-08-28",
+      "close": 4609.18
+    },
+    {
+      "date": "2026-08-31",
+      "close": 4625.09
+    },
+    {
+      "date": "2026-09-01",
+      "close": 4611.44
+    },
+    {
+      "date": "2026-09-02",
+      "close": 4547.96
+    },
+    {
+      "date": "2026-09-03",
+      "close": 4552.58
+    },
+    {
+      "date": "2026-09-04",
+      "close": 4548.05
+    },
+    {
+      "date": "2026-09-07",
+      "close": 4575.02
+    },
+    {
+      "date": "2026-09-08",
+      "close": 4558.74
+    },
+    {
+      "date": "2026-09-09",
+      "close": 4572.6
+    },
+    {
+      "date": "2026-09-10",
+      "close": 4548.39
+    },
+    {
       "date": "2026-09-11",
-      "close": 3685.2
+      "close": 4510.15
+    },
+    {
+      "date": "2026-09-14",
+      "close": 4480.08
+    },
+    {
+      "date": "2026-09-15",
+      "close": 4450.04
+    },
+    {
+      "date": "2026-09-16",
+      "close": 4480.27
+    },
+    {
+      "date": "2026-09-17",
+      "close": 4460.16
     },
     {
       "date": "2026-09-18",
-      "close": 3712.6
+      "close": 4507.39
     },
     {
-      "date": "2026-09-25",
-      "close": 3840.5
+      "date": "2026-09-21",
+      "close": 4539.56
+    },
+    {
+      "date": "2026-09-22",
+      "close": 4544.59
+    },
+    {
+      "date": "2026-09-23",
+      "close": 4517.28
+    },
+    {
+      "date": "2026-09-24",
+      "close": 4439.14
+    },
+    {
+      "date": "2026-09-28",
+      "close": 4340.76
+    },
+    {
+      "date": "2026-09-29",
+      "close": 4345.21
+    },
+    {
+      "date": "2026-09-30",
+      "close": 4357.62
+    },
+    {
+      "date": "2026-10-08",
+      "close": 4310.28
     },
     {
       "date": "2026-10-09",
-      "close": 3995.8
+      "close": 4317.26
+    },
+    {
+      "date": "2026-10-12",
+      "close": 4287.98
+    },
+    {
+      "date": "2026-10-13",
+      "close": 4275.68
+    },
+    {
+      "date": "2026-10-14",
+      "close": 4217.68
+    },
+    {
+      "date": "2026-10-15",
+      "close": 4166.01
     },
     {
       "date": "2026-10-16",
-      "close": 3910.4
+      "close": 4170.61
+    },
+    {
+      "date": "2026-10-19",
+      "close": 4174.53
+    },
+    {
+      "date": "2026-10-20",
+      "close": 4152.11
+    },
+    {
+      "date": "2026-10-21",
+      "close": 4111.93
+    },
+    {
+      "date": "2026-10-22",
+      "close": 4036.3
     },
     {
       "date": "2026-10-23",
-      "close": 3955.1
+      "close": 4105.33
+    },
+    {
+      "date": "2026-10-26",
+      "close": 4103.54
+    },
+    {
+      "date": "2026-10-27",
+      "close": 4049.55
+    },
+    {
+      "date": "2026-10-28",
+      "close": 4083.87
+    },
+    {
+      "date": "2026-10-29",
+      "close": 4041.84
     },
     {
       "date": "2026-10-30",
-      "close": 3892.7
+      "close": 3985.5
+    },
+    {
+      "date": "2026-11-02",
+      "close": 4016.92
+    },
+    {
+      "date": "2026-11-03",
+      "close": 4008.88
+    },
+    {
+      "date": "2026-11-04",
+      "close": 4101.34
+    },
+    {
+      "date": "2026-11-05",
+      "close": 4113.41
     },
     {
       "date": "2026-11-06",
-      "close": 4028.3
+      "close": 4054.28
+    },
+    {
+      "date": "2026-11-09",
+      "close": 4056.11
+    },
+    {
+      "date": "2026-11-10",
+      "close": 4059.11
+    },
+    {
+      "date": "2026-11-11",
+      "close": 4075.71
+    },
+    {
+      "date": "2026-11-12",
+      "close": 4043.93
     },
     {
       "date": "2026-11-13",
-      "close": 4065.9
+      "close": 4016.29
+    },
+    {
+      "date": "2026-11-16",
+      "close": 3979.8
+    },
+    {
+      "date": "2026-11-17",
+      "close": 3976.46
+    },
+    {
+      "date": "2026-11-18",
+      "close": 3983.77
+    },
+    {
+      "date": "2026-11-19",
+      "close": 3984.84
     },
     {
       "date": "2026-11-20",
-      "close": 3980.4
+      "close": 3954.57
+    },
+    {
+      "date": "2026-11-23",
+      "close": 3958.29
+    },
+    {
+      "date": "2026-11-24",
+      "close": 3963.82
+    },
+    {
+      "date": "2026-11-25",
+      "close": 3898.24
+    },
+    {
+      "date": "2026-11-26",
+      "close": 3900.55
     },
     {
       "date": "2026-11-27",
-      "close": 4018.6
+      "close": 4063.06
     }
   ],
   "sw_crowding": {
     "农林牧渔": {
       "code": "801010.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 1.36,
+      "crowding_percentile_3y": 73.2,
+      "ret_5d_pct": 0.19
     },
     "基础化工": {
       "code": "801030.SI",
-      "turnover_share_pct": 4.2,
-      "crowding_percentile_3y": 22.5,
-      "ret_5d_pct": 0.95
+      "turnover_share_pct": 4.02,
+      "crowding_percentile_3y": 30.4,
+      "ret_5d_pct": -4.84
     },
     "钢铁": {
       "code": "801040.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.32,
+      "crowding_percentile_3y": 6.1,
+      "ret_5d_pct": -3.57
     },
     "有色金属": {
       "code": "801050.SI",
-      "turnover_share_pct": 4.5,
-      "crowding_percentile_3y": 49.0,
-      "ret_5d_pct": -1.1
+      "turnover_share_pct": 4.38,
+      "crowding_percentile_3y": 44.4,
+      "ret_5d_pct": -7.9
     },
     "电子": {
       "code": "801080.SI",
-      "turnover_share_pct": 13.8,
-      "crowding_percentile_3y": 86.4,
-      "ret_5d_pct": 2.35
+      "turnover_share_pct": 24.28,
+      "crowding_percentile_3y": 85.0,
+      "ret_5d_pct": -4.23
     },
     "家用电器": {
       "code": "801110.SI",
-      "turnover_share_pct": 2.9,
-      "crowding_percentile_3y": 51.4,
-      "ret_5d_pct": 1.85
+      "turnover_share_pct": 2.02,
+      "crowding_percentile_3y": 78.1,
+      "ret_5d_pct": 1.69
     },
     "食品饮料": {
       "code": "801120.SI",
-      "turnover_share_pct": 3.4,
-      "crowding_percentile_3y": 46.5,
-      "ret_5d_pct": 1.1
+      "turnover_share_pct": 2.13,
+      "crowding_percentile_3y": 55.4,
+      "ret_5d_pct": -0.37
     },
     "纺织服饰": {
       "code": "801130.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.82,
+      "crowding_percentile_3y": 68.4,
+      "ret_5d_pct": -0.67
     },
     "轻工制造": {
       "code": "801140.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.95,
+      "crowding_percentile_3y": 28.6,
+      "ret_5d_pct": -1.62
     },
     "医药生物": {
       "code": "801150.SI",
-      "turnover_share_pct": 6.1,
-      "crowding_percentile_3y": 39.8,
-      "ret_5d_pct": 0.4
+      "turnover_share_pct": 5.3,
+      "crowding_percentile_3y": 37.6,
+      "ret_5d_pct": -3.86
     },
     "公用事业": {
       "code": "801160.SI",
-      "turnover_share_pct": 2.1,
-      "crowding_percentile_3y": 35.0,
-      "ret_5d_pct": -0.3
+      "turnover_share_pct": 2.0,
+      "crowding_percentile_3y": 53.5,
+      "ret_5d_pct": -0.38
     },
     "交通运输": {
       "code": "801170.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 1.35,
+      "crowding_percentile_3y": 34.7,
+      "ret_5d_pct": -1.04
     },
     "房地产": {
       "code": "801180.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.63,
+      "crowding_percentile_3y": 4.7,
+      "ret_5d_pct": -4.24
     },
     "商贸零售": {
       "code": "801200.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 1.04,
+      "crowding_percentile_3y": 28.3,
+      "ret_5d_pct": -2.4
     },
     "社会服务": {
       "code": "801210.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.6,
+      "crowding_percentile_3y": 21.7,
+      "ret_5d_pct": -2.38
     },
     "综合": {
       "code": "801230.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.15,
+      "crowding_percentile_3y": 25.3,
+      "ret_5d_pct": -4.86
     },
     "建筑材料": {
       "code": "801710.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 1.02,
+      "crowding_percentile_3y": 65.6,
+      "ret_5d_pct": -4.92
     },
     "建筑装饰": {
       "code": "801720.SI",
-      "turnover_share_pct": 2.3,
-      "crowding_percentile_3y": 41.0,
-      "ret_5d_pct": 1.65
+      "turnover_share_pct": 1.21,
+      "crowding_percentile_3y": 7.8,
+      "ret_5d_pct": -2.92
     },
     "电力设备": {
       "code": "801730.SI",
-      "turnover_share_pct": 7.2,
-      "crowding_percentile_3y": 44.2,
-      "ret_5d_pct": 3.1
+      "turnover_share_pct": 7.06,
+      "crowding_percentile_3y": 26.7,
+      "ret_5d_pct": -6.69
     },
     "国防军工": {
       "code": "801740.SI",
-      "turnover_share_pct": 3.7,
-      "crowding_percentile_3y": 58.5,
-      "ret_5d_pct": 1.5
+      "turnover_share_pct": 2.66,
+      "crowding_percentile_3y": 31.6,
+      "ret_5d_pct": -4.8
     },
     "计算机": {
       "code": "801750.SI",
-      "turnover_share_pct": 9.4,
-      "crowding_percentile_3y": 79.2,
-      "ret_5d_pct": 1.4
+      "turnover_share_pct": 5.01,
+      "crowding_percentile_3y": 8.5,
+      "ret_5d_pct": -3.51
     },
     "传媒": {
       "code": "801760.SI",
-      "turnover_share_pct": 4.1,
-      "crowding_percentile_3y": 72.5,
-      "ret_5d_pct": 0.85
+      "turnover_share_pct": 5.39,
+      "crowding_percentile_3y": 88.7,
+      "ret_5d_pct": -2.96
     },
     "通信": {
       "code": "801770.SI",
-      "turnover_share_pct": 4.6,
-      "crowding_percentile_3y": 68.0,
-      "ret_5d_pct": 1.15
+      "turnover_share_pct": 7.3,
+      "crowding_percentile_3y": 81.2,
+      "ret_5d_pct": -4.22
     },
     "银行": {
       "code": "801780.SI",
-      "turnover_share_pct": 2.6,
-      "crowding_percentile_3y": 38.5,
-      "ret_5d_pct": 0.45
+      "turnover_share_pct": 2.79,
+      "crowding_percentile_3y": 88.9,
+      "ret_5d_pct": 4.05
     },
     "非银金融": {
       "code": "801790.SI",
-      "turnover_share_pct": 5.8,
-      "crowding_percentile_3y": 63.2,
-      "ret_5d_pct": 0.9
+      "turnover_share_pct": 1.68,
+      "crowding_percentile_3y": 9.6,
+      "ret_5d_pct": -1.63
     },
     "汽车": {
       "code": "801880.SI",
-      "turnover_share_pct": 5.1,
-      "crowding_percentile_3y": 56.0,
-      "ret_5d_pct": 1.2
+      "turnover_share_pct": 3.79,
+      "crowding_percentile_3y": 25.3,
+      "ret_5d_pct": -2.11
     },
     "机械设备": {
       "code": "801890.SI",
-      "turnover_share_pct": 4.8,
-      "crowding_percentile_3y": 34.0,
-      "ret_5d_pct": -0.6
+      "turnover_share_pct": 8.28,
+      "crowding_percentile_3y": 81.2,
+      "ret_5d_pct": -4.63
     },
     "煤炭": {
       "code": "801950.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.72,
+      "crowding_percentile_3y": 53.2,
+      "ret_5d_pct": 3.71
     },
     "石油石化": {
       "code": "801960.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.81,
+      "crowding_percentile_3y": 54.2,
+      "ret_5d_pct": -2.56
     },
     "环保": {
       "code": "801970.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.7,
+      "crowding_percentile_3y": 11.0,
+      "ret_5d_pct": -4.06
     },
     "美容护理": {
       "code": "801980.SI",
-      "turnover_share_pct": 1.5,
-      "crowding_percentile_3y": 45.0,
-      "ret_5d_pct": 0.0
+      "turnover_share_pct": 0.21,
+      "crowding_percentile_3y": 32.0,
+      "ret_5d_pct": -3.66
     }
   }
 }
