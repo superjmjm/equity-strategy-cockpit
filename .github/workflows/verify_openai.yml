@@ -1,0 +1,70 @@
+name: Verify OpenAI Stage 0-2 equity extraction
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: verify-equity-openai
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - name: Run synthetic A-share PDF through Stage 0, Stage 1, and Stage 2
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-6.2-sol' }}
+        run: |
+          python - <<'PY'
+          import pymupdf as fitz
+          from pathlib import Path
+          from tempfile import TemporaryDirectory
+          from engine.reader import open_cache, read_report
+
+          doc = fitz.open()
+          page = doc.new_page()
+          text = (
+              "一、A股市场策略展望\n\n"
+              "随着10万亿化债资金落地与M1同比回升，我们对跨年A股大势由中性上调为结构性偏多，"
+              "建议保持较高仓位进攻，预计上证指数运行区间在3200至3500点。\n\n"
+              "二、行业配置主线\n\n"
+              "重点推荐超配国产半导体设备（电子）以及以旧换新补贴受益的家用电器板块；"
+              "短期规避高换手亏损微盘题材。"
+          )
+          page.insert_textbox(fitz.Rect(50, 60, 540, 700), text, fontsize=12, fontname="china-s")
+          pdf_bytes = doc.tobytes()
+          doc.close()
+
+          meta = {
+              "broker": "中信证券",
+              "series": "A股策略聚焦",
+              "series_role": "flagship",
+              "title": "合成连通性测试周报",
+              "report_date": "2026-11-26",
+              "week_mon": "2026-11-23",
+              "is_core": True,
+          }
+          with TemporaryDirectory() as tmp:
+              db = open_cache(Path(tmp) / "probe.sqlite")
+              try:
+                  res = read_report(pdf_bytes, meta, db, enable_vision=False)
+              finally:
+                  db.close()
+          out = res["output"]
+          assert out["market_stance_slot"] is not None, "Expected non-null market_stance_slot"
+          assert len(out["sector_allocation_slot"]["overweight_lines"]) >= 1, "Expected overweight sector"
+          print("stance=", out["market_stance_slot"]["stance_tier"])
+          print("overweights=", [x["sw_level1_list"] for x in out["sector_allocation_slot"]["overweight_lines"]])
+          print("result=passed")
+          PY

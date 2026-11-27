@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A股权益策略投研台 · 主观多头买方决策驾驶舱</title>
+  <meta name="description" content="面向主观多头基金经理与策略投研人员的卖方策略研报边际转向监测、DDM三因子对撞、申万行业拥挤度矩阵与段号溯源工作台" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="demo-banner" class="demo-banner hidden">
+    当前展示初始演示数据集（实盘 GitHub Actions 采集入库第一篇真实研报后，演示样本将自动 100% 隔离隐藏）
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <div class="brand-group">
+          <div class="brand-bar" title="A股红涨看多·绿跌降温惯例"></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <h1 class="site-title">A股权益策略投研台</h1>
+              <select id="week-select" class="select-ctrl mono" aria-label="选择观察周"></select>
+            </div>
+            <p id="header-subtitle" class="site-subtitle">正在加载策略快照...</p>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <div class="segmented" role="group" aria-label="卖方样本池切换">
+            <button id="btn-pool-all" class="seg-btn active" onclick="App.setPool('all')">全部卖方</button>
+            <button id="btn-pool-core" class="seg-btn" onclick="App.setPool('core')">★ 核心首席白名单</button>
+          </div>
+
+          <button class="btn" onclick="App.toggleTheme()" title="切换明暗主题" id="btn-theme">夜间</button>
+
+          <button class="btn" onclick="App.openCart(true)" id="btn-open-cart">
+            投委会周报篮 <span id="cart-badge" class="badge-count mono">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <nav class="tabs-list" aria-label="买方决策流层级">
+          <button id="tab-macro" class="tab-btn active" onclick="App.switchTab('macro')">1. 大势与边际转向雷达</button>
+          <button id="tab-sector" class="tab-btn" onclick="App.switchTab('sector')">2. 中观主线与拥挤度矩阵</button>
+          <button id="tab-evidence" class="tab-btn" onclick="App.switchTab('evidence')">3. 增量论据·原页定位与日历</button>
+          <button id="tab-stocks" class="tab-btn" onclick="App.switchTab('stocks')">4. 金股与标的共振池</button>
+        </nav>
+        <div class="legend-strip">
+          <span><i class="dot dot-bull"></i>红：偏多/升温</span>
+          <span><i class="dot dot-warn"></i>黄：分歧/拥挤预警</span>
+          <span><i class="dot dot-bear"></i>绿：谨慎/降温</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-body">
+    <!-- TAB 1: MACRO & MARGINAL SHIFTS -->
+    <section id="panel-macro" class="panel-section">
+      <div id="clash-summary-banner" class="clash-banner"></div>
+
+      <div class="grid-macro-top">
+        <!-- Left: Consensus Thermometer -->
+        <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;gap:14px;">
+          <div>
+            <div class="section-head" style="margin-bottom:6px;">
+              <h2 class="section-title">大势仓位共识温度计</h2>
+              <span id="thermo-pool-pill" class="pill"></span>
+            </div>
+            <p class="section-desc">同券商同周多篇报告按「主策略周报 &gt; 辅助周报」自动一票去重；条件性局部观点不计票</p>
+            <div id="thermo-bar" class="thermo-bar"></div>
+            <div id="thermo-legend" class="thermo-grid"></div>
+          </div>
+
+          <div class="subcard" id="divergence-note-box"></div>
+        </div>
+
+        <!-- Right: Marginal Shift Radar -->
+        <div class="card">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">本周边际转向高信噪比雷达</h2>
+              <p class="section-desc">自动比对各首席上期自身定调，过滤“维持不变”常规周报；常年偏多型首席降温自动提权预警</p>
+            </div>
+            <span class="pill tone-warn" id="shift-count-pill"></span>
+          </div>
+          <div id="shifts-grid" class="grid-2col"></div>
+        </div>
+      </div>
+
+      <!-- Bottom: DDM 3-Factor Bull vs Bear Collider -->
+      <div class="card">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">多空核心论据「DDM 三因子」正面对撞台</h2>
+            <p class="section-desc">将不同卖方框架（宏观周期/微观资金/政策主题）归一化拆解至分子与分母三维度进行跨机构聚类</p>
+          </div>
+          <div class="segmented" id="ddm-filter-group">
+            <button class="seg-btn active" data-ddm="all" onclick="App.setDdmFilter('all')">全部因子</button>
+            <button class="seg-btn" data-ddm="earnings" onclick="App.setDdmFilter('earnings')">分子：盈利宏观</button>
+            <button class="seg-btn" data-ddm="liquidity" onclick="App.setDdmFilter('liquidity')">分母：资金筹码</button>
+            <button class="seg-btn" data-ddm="risk" onclick="App.setDdmFilter('risk')">分母：政策风偏</button>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px;font-weight:600;">
+              <span><i class="dot dot-bull"></i>做多支撑核心抓手 (Bull Claims)</span>
+              <span id="bull-count-label" class="mono" style="color:var(--muted);"></span>
+            </div>
+            <div id="bull-claims-col" style="display:flex;flex-direction:column;gap:10px;"></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px;font-weight:600;">
+              <span><i class="dot dot-bear"></i>谨慎掣肘核心顾虑 (Bear &amp; Risk Claims)</span>
+              <span id="bear-count-label" class="mono" style="color:var(--muted);"></span>
+            </div>
+            <div id="bear-claims-col" style="display:flex;flex-direction:column;gap:10px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: SECTOR x NARRATIVE CROWDING MATRIX -->
+    <section id="panel-sector" class="panel-section hidden">
+      <div class="grid-sector-top">
+        <div class="card">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">「申万一级行业 × 卖方叙事」四象限拥挤度迁移矩阵</h2>
+              <p class="section-desc">横轴：卖方推荐覆盖率 · 纵轴：周边际净增减家数 Δ · 点击任意气泡透视多空分歧与二级市场成交拥挤度</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <svg id="sector-svg" viewBox="0 0 620 390" class="quadrant-svg"></svg>
+          </div>
+        </div>
+
+        <div class="card" id="sector-inspector-card" style="display:flex;flex-direction:column;justify-content:space-between;"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">申万一级行业标准化对齐总表（联动近 3 年成交占比拥挤度分位）</h2>
+            <p class="section-desc" id="market-asof-note"></p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>申万一级行业</th>
+                <th>归并的卖方原生叙事词</th>
+                <th>卖方推荐度</th>
+                <th>周边际 Δ</th>
+                <th>成交占比 (3Y分位)</th>
+                <th>5日涨跌</th>
+                <th>买方象限状态</th>
+                <th style="text-align:right;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="sector-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: EVIDENCE NUGGETS & CATALYST CALENDAR -->
+    <section id="panel-evidence" class="panel-section hidden">
+      <div class="card">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">去水词「增量数据抓手 &amp; 原页图表定位」淘金池</h2>
+            <p class="section-desc">剥离卖方套话结论，仅保留极值分位、高频排产与特殊资金背离论据，点击可定位原报告页码及跳转 Drive 原件</p>
+          </div>
+          <div class="segmented" id="nugget-filter-group">
+            <button class="seg-btn active" data-nug="all" onclick="App.setNuggetFilter('all')">全部抓手</button>
+            <button class="seg-btn" data-nug="flow_crowding" onclick="App.setNuggetFilter('flow_crowding')">资金与筹码</button>
+            <button class="seg-btn" data-nug="meso_fundamental" onclick="App.setNuggetFilter('meso_fundamental')">中观景气</button>
+            <button class="seg-btn" data-nug="valuation_calendar" onclick="App.setNuggetFilter('valuation_calendar')">估值与日历</button>
+          </div>
+        </div>
+        <div id="nuggets-grid" class="grid-3col"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">未来 45 天关键宏观 / 政策 / 产业催化验证日历</h2>
+            <p class="section-desc">跨报告汇总待验证时间窗口与情景推演</p>
+          </div>
+        </div>
+        <div id="catalysts-grid" class="grid-4col"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: GOLDEN STOCKS POOL -->
+    <section id="panel-stocks" class="panel-section hidden">
+      <div class="card">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">月度金股与策略标的共振池（区分「首次新进黑马」与「扎堆拥挤票」）</h2>
+            <p class="section-desc">自动与前期金股池做差集识别新调入预期差线索，并对多家同时扎堆标的标记拥挤度提示</p>
+          </div>
+          <div class="segmented" id="stock-filter-group">
+            <button class="seg-btn active" data-stk="all" onclick="App.setStockFilter('all')">全部标的</button>
+            <button class="seg-btn" data-stk="fresh" onclick="App.setStockFilter('fresh')">★ 本期新进黑马</button>
+            <button class="seg-btn" data-stk="crowded" onclick="App.setStockFilter('crowded')">🔥 多家扎堆共识</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>标的 / 代码</th>
+                <th>申万一级</th>
+                <th>入选状态与覆盖机构</th>
+                <th>策略组合角色定位</th>
+                <th>核心推荐逻辑汇总</th>
+                <th style="text-align:right;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="stocks-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE-OVER 1: 3-SECOND VERBATIM SOURCE & TRAJECTORY INSPECTOR -->
+  <div id="src-backdrop" class="backdrop hidden" onclick="App.closeSource()"></div>
+  <aside id="src-drawer" class="drawer" aria-label="原文段号穿透验真">
+    <div class="drawer-header">
+      <div>
+        <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+          <span class="pill tone-info">段号锚定原文验真</span>
+          <strong id="src-broker" style="font-size:13px;"></strong>
+          <span id="src-persona" class="pill"></span>
+        </div>
+        <h3 id="src-title" style="margin:6px 0 2px;font-size:14px;"></h3>
+        <div id="src-meta" style="font-size:12px;color:var(--muted);"></div>
+      </div>
+      <button class="btn btn-sm" onclick="App.closeSource()">关闭 ✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- 12-Week Stance Trajectory x HS300 Overlay SVG (Replaces controversial % winrate) -->
+      <div class="subcard">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-size:12px;">
+          <strong>该团队历史定调档位轨迹 × 沪深300走势对照</strong>
+          <span style="color:var(--muted);">柱=定调档位 · 折线=沪深300</span>
+        </div>
+        <div id="src-trajectory-wrap"></div>
+      </div>
+
+      <!-- Structured Slot Schema Preview -->
+      <div class="subcard">
+        <div style="font-size:12px;font-weight:600;margin-bottom:6px;">Stage 2 具名槽位结构化归档标签</div>
+        <div id="src-schema-grid" class="thermo-grid" style="font-size:12px;"></div>
+      </div>
+
+      <!-- Verbatim Stage 0 [pid] Paragraphs -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12px;">
+          <strong>Stage 0 原文自然段回填证据（100% 零篡改对齐）</strong>
+          <a id="src-drive-link" href="#" target="_blank" rel="noopener noreferrer" class="link-btn hidden">打开 Drive 原报告 PDF ↗</a>
+        </div>
+        <div id="src-quotes-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <span style="font-size:12px;color:var(--muted);">核验无误后可加入本周内部策略周会汇报素材</span>
+      <button id="src-cart-btn" class="btn btn-primary"></button>
+    </div>
+  </aside>
+
+  <!-- SLIDE-OVER 2: IC BRIEFING CART -->
+  <div id="cart-backdrop" class="backdrop hidden" onclick="App.openCart(false)"></div>
+  <aside id="cart-drawer" class="drawer" aria-label="投委会策略周报素材篮">
+    <div class="drawer-header">
+      <div>
+        <h3 style="margin:0;font-size:15px;">投委会策略周报素材篮</h3>
+        <p style="margin:3px 0 0;font-size:12px;color:var(--muted);">边看边收分歧论据与数据抓手，一键组装内部《买方周度策略综述》初稿</p>
+      </div>
+      <button class="btn btn-sm" onclick="App.openCart(false)">关闭 ✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12px;">
+          <strong>已收藏信号卡片</strong>
+          <button class="link-btn" onclick="App.clearCart()">清空重选</button>
+        </div>
+        <div id="cart-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+      </div>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12px;">
+          <strong>自动生成的内部周会汇报 Markdown 草稿</strong>
+          <button id="btn-copy-md" class="btn btn-sm" onclick="App.copyBriefing()">一键复制全文</button>
+        </div>
+        <pre id="cart-md" class="md-preview mono"></pre>
+      </div>
+    </div>
+  </aside>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+name: Verify Google Drive backup
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: verify-equity-drive
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - name: Verify equity archive folder read/write and cleanup
+        env:
+          GDRIVE_OAUTH_JSON: ${{ secrets.GDRIVE_OAUTH_JSON }}
+          GDRIVE_FOLDER_ID: ${{ vars.GDRIVE_FOLDER_ID }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import io
+          import os
+          from googleapiclient.http import MediaIoBaseUpload
+          from scripts.report_io import drive_service, env
+
+          FOLDER_MIME = "application/vnd.google-apps.folder"
+
+          drive = drive_service()
+          files = drive.files()
+          folder_id = env("GDRIVE_FOLDER_ID")
+          folder = files.get(
+              fileId=folder_id,
+              fields="mimeType,trashed,capabilities(canAddChildren)",
+              supportsAllDrives=True,
+          ).execute()
+          if folder["mimeType"] != FOLDER_MIME or folder["trashed"] or not folder["capabilities"]["canAddChildren"]:
+              raise SystemExit("ArchiveFolderNotWritable")
+          print("archive_folder_writeable=confirmed")
+
+          payload = f"Equity Strategy Cockpit Drive check {os.environ['GITHUB_RUN_ID']}\n".encode()
+          probe = files.create(
+              body={"name": "equity-cockpit-drive-check.txt", "parents": [folder_id]},
+              media_body=MediaIoBaseUpload(io.BytesIO(payload), mimetype="text/plain"),
+              fields="id,md5Checksum",
+              supportsAllDrives=True,
+          ).execute()
+          try:
+              assert probe.get("md5Checksum") == hashlib.md5(payload).hexdigest()
+              assert files.get_media(fileId=probe["id"], supportsAllDrives=True).execute() == payload
+              print("write_and_readback=passed")
+          finally:
+              files.update(fileId=probe["id"], body={"trashed": True}, supportsAllDrives=True).execute()
+              print("test_file_cleanup=passed")
+          PY

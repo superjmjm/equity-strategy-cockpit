@@ -1,0 +1,264 @@
+name: Update equity cockpit
+on:
+  workflow_dispatch:
+    inputs:
+      trigger_source:
+        description: Dispatch origin
+        type: choice
+        options: [manual, cloudflare, benchmark, publish-only, drive-only]
+        default: manual
+      report_id:
+        description: Optional NXNY report ID for single-report validation
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - 'data/**'
+      - 'engine/**'
+      - 'scripts/**'
+      - '.github/workflows/update_dashboard.yml'
+  schedule:
+    - cron: '23 0 * * *' # 北京时间 08:23
+    - cron: '23 4 * * *' # 北京时间 12:23
+    - cron: '23 9 * * *' # 北京时间 17:23
+    - cron: '37 8 * * *' # 北京时间 16:37 盘后申万拥挤度与沪深300更新
+
+permissions: {}
+concurrency:
+  group: equity-cockpit-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: >-
+      (vars.ENABLE_REPORT_PIPELINE == 'true' || inputs.trigger_source == 'drive-only' ||
+      (github.event_name == 'push' && contains(github.event.head_commit.message, '[drive-only-intake]'))) &&
+      (github.event_name != 'push' || contains(github.event.head_commit.message, '[drive-only-intake]')) &&
+      github.ref_name == github.event.repository.default_branch &&
+      inputs.trigger_source != 'benchmark' && inputs.trigger_source != 'publish-only' &&
+      (github.event_name != 'schedule' || (vars.SCHEDULER == 'github' && github.event.schedule != '37 8 * * *')) &&
+      (inputs.trigger_source != 'cloudflare' || (vars.SCHEDULER == 'cloudflare' && !inputs.report_id))
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    env:
+      BRANCH: ${{ github.event.repository.default_branch }}
+      NXNY_REPORT_ID: ${{ inputs.report_id }}
+      DRIVE_ONLY: ${{ inputs.trigger_source == 'drive-only' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[drive-only-intake]')) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Check required secrets and variables before downloading
+        env:
+          MODEL_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DRIVE: ${{ secrets.GDRIVE_OAUTH_JSON }}
+          FOLDER: ${{ vars.GDRIVE_FOLDER_ID }}
+          BROWSER_KEY: ${{ secrets.TINYFISH_API_KEY }}
+          PROFILE: ${{ secrets.TINYFISH_PROFILE_ID }}
+        run: |
+          keys=(MODEL_KEY DRIVE FOLDER)
+          if [[ "$DRIVE_ONLY" != "true" ]]; then keys+=(BROWSER_KEY PROFILE); fi
+          for key in "${keys[@]}"; do
+            if [[ -z "${!key}" ]]; then echo "::error::Missing configuration $key"; exit 1; fi
+          done
+
+      - name: Recover unpublished Drive PDFs or collect NXNY equity reports
+        id: fetch
+        env:
+          GDRIVE_OAUTH_JSON: ${{ secrets.GDRIVE_OAUTH_JSON }}
+          GDRIVE_FOLDER_ID: ${{ vars.GDRIVE_FOLDER_ID }}
+          TINYFISH_API_KEY: ${{ secrets.TINYFISH_API_KEY }}
+          TINYFISH_PROFILE_ID: ${{ secrets.TINYFISH_PROFILE_ID }}
+          REPORT_LOOKBACK_DAYS: '7'
+          MAX_NEW_PDFS: ${{ vars.MAX_NEW_PDFS || '18' }}
+        run: |
+          rc=0
+          args=()
+          if [[ "$DRIVE_ONLY" == "true" ]]; then args+=(--drive-only); fi
+          python scripts/report_io.py fetch "${args[@]}" || rc=$?
+          echo "code=$rc" >> "$GITHUB_OUTPUT"
+          if [[ $rc != 0 && $rc != 2 ]]; then exit "$rc"; fi
+
+      - name: Back up new PDFs to Google Drive
+        if: env.DRIVE_ONLY != 'true'
+        env:
+          GDRIVE_OAUTH_JSON: ${{ secrets.GDRIVE_OAUTH_JSON }}
+          GDRIVE_FOLDER_ID: ${{ vars.GDRIVE_FOLDER_ID }}
+        run: python scripts/report_io.py backup
+
+      - name: Run anchored two-pass + chart vision extraction
+        id: extract
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-6.2-sol' }}
+        run: |
+          rc=0
+          python scripts/anchored_batch.py || rc=$?
+          echo "code=$rc" >> "$GITHUB_OUTPUT"
+          if [[ $rc != 0 && $rc != 2 ]]; then exit "$rc"; fi
+
+      - name: Refresh Stage 3 weekly cross-broker synthesis cache and verify public bundle
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-6.2-sol' }}
+        run: python scripts/build_public.py "$RUNNER_TEMP/equity-proof" --run-stage3
+
+      - name: Commit sharded reports, synthesis cache, and ignore state
+        id: commit
+        run: |
+          set -euo pipefail
+          mkdir -p data/reports
+          touch data/synthesis_cache.json
+          [[ -s data/synthesis_cache.json ]] || echo "{}" > data/synthesis_cache.json
+          PATHS=(data/reports data/synthesis_cache.json ignored_nxny_ids.json)
+          git add -- "${PATHS[@]}"
+          if git diff --cached --quiet; then
+            echo "Report shards and ignore state unchanged"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update equity strategy reports and synthesis' -- "${PATHS[@]}"
+          git fetch origin "$BRANCH"
+          git rebase "FETCH_HEAD"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Flag partial batch after committing successful reports
+        if: steps.fetch.outputs.code == '2' || steps.extract.outputs.code == '2'
+        run: |
+          echo "::error::Partial batch completed. Successful reports were committed; failed items will retry next run."
+          exit 1
+
+  benchmark:
+    if: >-
+      github.ref_name == github.event.repository.default_branch &&
+      ((github.event_name == 'schedule' && vars.SCHEDULER != 'cloudflare' && github.event.schedule == '37 8 * * *') ||
+      (github.event_name == 'workflow_dispatch' && inputs.trigger_source == 'benchmark'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    env:
+      BRANCH: ${{ github.event.repository.default_branch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install 'akshare>=1.15.0'
+      - name: Refresh HS300 and 31 Shenwan Level-1 crowding percentiles
+        run: python scripts/update_market.py
+      - name: Commit updated market benchmark
+        id: commit
+        run: |
+          set -euo pipefail
+          git add -- data/market_benchmark.json
+          if git diff --cached --quiet; then
+            echo "Market benchmark unchanged"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh A-share HS300 and Shenwan crowding benchmark' -- data/market_benchmark.json
+          git fetch origin "$BRANCH"
+          git rebase "FETCH_HEAD"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  pages-package:
+    needs: [update, benchmark]
+    if: >-
+      always() && !cancelled() && vars.DEPLOY_GITHUB_PAGES == 'true' &&
+      github.ref_name == github.event.repository.default_branch &&
+      (github.event_name == 'push' || needs.update.outputs.changed == 'true' ||
+      needs.benchmark.outputs.changed == 'true' ||
+      (github.event_name == 'workflow_dispatch' &&
+      (inputs.trigger_source == 'publish-only' || needs.update.result == 'success' || needs.benchmark.result == 'success')))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact_id }}
+      artifact_name: ${{ steps.package.outputs.artifact_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install 'jsonschema>=4.22,<5' 'pypdf>=6,<7'
+      - name: Stage static site and precomputed snapshot.json
+        id: package
+        run: |
+          mkdir -p "$RUNNER_TEMP/equity-public"
+          python scripts/build_public.py "$RUNNER_TEMP/equity-public"
+          echo "artifact_name=github-pages-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-pages-artifact@v4
+        id: upload
+        with:
+          name: ${{ steps.package.outputs.artifact_name }}
+          path: ${{ runner.temp }}/equity-public
+          retention-days: 1
+
+  pages:
+    needs: pages-package
+    if: always() && !cancelled() && needs.pages-package.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Wait for uploaded Pages artifact visibility
+        timeout-minutes: 3
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.pages-package.outputs.artifact_id }}
+          ARTIFACT_NAME: ${{ needs.pages-package.outputs.artifact_name }}
+        run: |
+          if [[ ! "$ARTIFACT_ID" =~ ^[0-9]+$ || -z "$ARTIFACT_NAME" ]]; then
+            echo '::error::Pages upload did not return a valid artifact ID/name.'
+            exit 1
+          fi
+          for attempt in {1..12}; do
+            if curl --fail --silent --show-error --max-time 5 \
+              --header "Authorization: Bearer $GH_TOKEN" \
+              --header 'Accept: application/vnd.github+json' \
+              "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=$ARTIFACT_NAME" | \
+              jq -e --argjson id "$ARTIFACT_ID" --arg name "$ARTIFACT_NAME" \
+                'any(.artifacts[]; .id == $id and .name == $name and .expired == false)' > /dev/null; then
+              echo "Pages artifact $ARTIFACT_NAME ($ARTIFACT_ID) is visible."
+              exit 0
+            fi
+            if (( attempt < 12 )); then sleep 5; fi
+          done
+          echo "::error::Pages artifact $ARTIFACT_NAME ($ARTIFACT_ID) did not become visible."
+          exit 1
+      - uses: actions/deploy-pages@v4
+        id: deploy
+        with:
+          artifact_name: ${{ needs.pages-package.outputs.artifact_name }}

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.sqlite
+*.sqlite3
+.pytest_cache/
+.env
+reports_inbox/*.pdf
+reports_inbox/listing.json
+!reports_inbox/.gitkeep
+dist/
+public/
+.DS_Store

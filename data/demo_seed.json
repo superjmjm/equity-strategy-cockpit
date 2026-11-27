@@ -1,0 +1,2112 @@
+[
+  {
+    "report_id": "demo_w47_citic_0001",
+    "is_demo": true,
+    "broker": "中信证券",
+    "series": "A股策略聚焦",
+    "series_role": "flagship",
+    "title": "外部汇率与业绩消化期，维持均衡等待信号",
+    "report_date": "2026-11-17",
+    "week_mon": "2026-11-16",
+    "is_core": true,
+    "source_file": "A股策略聚焦 20261117 - 维持均衡等待信号.pdf",
+    "total_pages": 24,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "短期等待外部扰动消化，维持红利与绩优均衡配置。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "neutral_range",
+      "position_guidance": "medium_standard",
+      "self_declared_shift": "maintain_stance",
+      "marginal_shift_note": null,
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "外部强美元与三季报尾声仍需消化，建议维持中等仓位均衡等待政策信号。",
+      "evidence_pids": [
+        "P2-S1"
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "pid": "P2-S1",
+          "heading": "一、大势研判",
+          "text": "外部强美元扰动尚未结束，建议维持中等均衡仓位，等待化债与内需落地信号。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": null,
+      "liquidity_chip_slot": null,
+      "policy_risk_slot": null
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "银行",
+            "公用事业"
+          ],
+          "canonical_narrative": "high_dividend_soe_valuation",
+          "raw_theme_phrase": "低波红利底仓",
+          "catalyst_logic": "防御波动首选稳定现金流红利资产。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P8-S2"
+          ],
+          "evidence": [
+            {
+              "page": 8,
+              "pid": "P8-S2",
+              "heading": "二、行业配置",
+              "text": "短期优先以银行及公用事业低波红利作为底仓。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "电子"
+          ],
+          "canonical_narrative": "ai_compute_semicon_autonomy",
+          "raw_theme_phrase": "国产半导体设备",
+          "catalyst_logic": "自主可控逻辑不受外部关税干扰。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P9-S1"
+          ],
+          "evidence": [
+            {
+              "page": 9,
+              "pid": "P9-S1",
+              "heading": "二、行业配置",
+              "text": "科技端聚焦国产半导体设备确定性订单。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": []
+    },
+    "data_nuggets_slot": [],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [
+      {
+        "stock_name": "北方华创",
+        "stock_code": "002371.SZ",
+        "sw_level1": "电子",
+        "portfolio_role": "core_bellwether",
+        "recommend_logic": "先进制程扩产核心设备龙头。",
+        "evidence_pids": [
+          "P18-S1"
+        ],
+        "evidence": [
+          {
+            "page": 18,
+            "pid": "P18-S1",
+            "heading": "三、月度金股",
+            "text": "北方华创：国内晶圆厂设备招标核心受益中军。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "美的集团",
+        "stock_code": "000333.SZ",
+        "sw_level1": "家用电器",
+        "portfolio_role": "dividend_defensive",
+        "recommend_logic": "内销稳健叠加高分红安全垫。",
+        "evidence_pids": [
+          "P18-S2"
+        ],
+        "evidence": [
+          {
+            "page": 18,
+            "pid": "P18-S2",
+            "heading": "三、月度金股",
+            "text": "美的集团：家电以旧换新龙头，股息率具备吸引力。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w47_sws_0002",
+    "is_demo": true,
+    "broker": "申万宏源证券",
+    "series": "策略一周回顾展望",
+    "series_role": "flagship",
+    "title": "反弹窗口延续，积极把握跨年进攻主线",
+    "report_date": "2026-11-15",
+    "week_mon": "2026-11-16",
+    "is_core": true,
+    "source_file": "6531001-申万宏源-策略一周回顾展望：反弹窗口仍在延续-261115.pdf",
+    "total_pages": 16,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "风险偏好高涨，维持高仓位积极进攻科创与主题弹性。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "aggressive_bull",
+      "position_guidance": "high_overweight",
+      "self_declared_shift": "maintain_stance",
+      "marginal_shift_note": null,
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "活跃资金持续涌入，跨年春季躁动有望提前演绎，维持积极进攻态度。",
+      "evidence_pids": [
+        "P1-S2"
+      ],
+      "evidence": [
+        {
+          "page": 1,
+          "pid": "P1-S2",
+          "heading": "核心结论",
+          "text": "活跃资金持续涌入，反弹窗口仍在延续，建议积极把握科技成长弹性。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": null,
+      "liquidity_chip_slot": null,
+      "policy_risk_slot": null
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "电子",
+            "计算机"
+          ],
+          "canonical_narrative": "ai_compute_semicon_autonomy",
+          "raw_theme_phrase": "国产算力链",
+          "catalyst_logic": "科创弹性领涨品种。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P5-S1"
+          ],
+          "evidence": [
+            {
+              "page": 5,
+              "pid": "P5-S1",
+              "heading": "配置建议",
+              "text": "继续超配国产算力与半导体自主可控。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "银行"
+          ],
+          "canonical_narrative": "high_dividend_soe_valuation",
+          "raw_theme_phrase": "银行高股息",
+          "catalyst_logic": "岁末险资配置底仓。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P6-S1"
+          ],
+          "evidence": [
+            {
+              "page": 6,
+              "pid": "P6-S1",
+              "heading": "配置建议",
+              "text": "底仓保留银行高股息。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "机械设备",
+            "轻工制造"
+          ],
+          "canonical_narrative": "north_america_export_chain",
+          "raw_theme_phrase": "欧美工具出口",
+          "catalyst_logic": "四季度抢出口订单支撑。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P6-S3"
+          ],
+          "evidence": [
+            {
+              "page": 6,
+              "pid": "P6-S3",
+              "heading": "配置建议",
+              "text": "关注四季度抢出口链条。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": []
+    },
+    "data_nuggets_slot": [],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w47_gf_0003",
+    "is_demo": true,
+    "broker": "广发证券",
+    "series": "周末五分钟全知道",
+    "series_role": "flagship",
+    "title": "外部扰动未明朗前继续以红利防御为主",
+    "report_date": "2026-11-15",
+    "week_mon": "2026-11-16",
+    "is_core": true,
+    "source_file": "6531088-广发证券-周末五分钟全知道(11月第2期)-261115.pdf",
+    "total_pages": 22,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "短期赔率尚未到位，维持红利低波防御姿态。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "defensive_cautious",
+      "position_guidance": "low_defensive",
+      "self_declared_shift": "maintain_stance",
+      "marginal_shift_note": null,
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "海外利率偏高叠加局部题材拥挤，暂以红利防御等待换手率出清。",
+      "evidence_pids": [
+        "P2-S1"
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "pid": "P2-S1",
+          "heading": "核心观点",
+          "text": "短期暂以红利低波防御等待成长板块拥挤度回落。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": null,
+      "liquidity_chip_slot": null,
+      "policy_risk_slot": null
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "银行",
+            "公用事业",
+            "交通运输"
+          ],
+          "canonical_narrative": "high_dividend_soe_valuation",
+          "raw_theme_phrase": "稳定红利龙头",
+          "catalyst_logic": "低利率环境绝对收益首选。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P7-S1"
+          ],
+          "evidence": [
+            {
+              "page": 7,
+              "pid": "P7-S1",
+              "heading": "行业比较",
+              "text": "维持银行、公用事业、交运稳定红利配置。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": []
+    },
+    "data_nuggets_slot": [],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w48_citic_0101",
+    "is_demo": true,
+    "broker": "中信证券",
+    "series": "A股策略聚焦",
+    "series_role": "flagship",
+    "title": "化债拨付缓释尾部担忧，跨年配置窗口提前开启",
+    "report_date": "2026-11-24",
+    "week_mon": "2026-11-23",
+    "is_core": true,
+    "source_file": "A股策略聚焦 20261124 - 化债拨付缓释尾部担忧，跨年配置窗口提前开启.pdf",
+    "total_pages": 26,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "化债实质拨付叠加M1连续改善，由中性均衡上调至结构性偏多，布局内需与自主可控。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "structural_bull",
+      "position_guidance": "barbell_balanced",
+      "self_declared_shift": "turn_more_positive",
+      "marginal_shift_note": "较上周「中性均衡」上调一档至「结构性偏多」，建议从纯低波红利防御向内需消费+绩优成长切换。",
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "10万亿级化债首批置换实质拨付叠加M1-M2剪刀差连续两月收窄，企业现金流底部确认，跨年布局窗口提前两周开启。",
+      "evidence_pids": [
+        "P4-S2"
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "pid": "P4-S2",
+          "heading": "一、大势研判与配置节奏",
+          "text": "10万亿级化债资金首批置换已进入实质拨付阶段，叠加M1-M2剪刀差连续两个月收窄1.4个百分点，企业端现金流预期出现底部拐点，建议机构利用岁末震荡积极提升权益组合进攻弹性。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "credit_m1_pulse",
+        "claim_summary": "10月M1同比连续两月回升且以旧换新带动家电汽车社零超预期，企业活期存款活化印证经营现金流筑底。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P6-S1"
+        ],
+        "evidence": [
+          {
+            "page": 6,
+            "pid": "P6-S1",
+            "heading": "一、基本面跟踪",
+            "text": "10月M1同比回升叠加消费品以旧换新补贴核销提速，全A非金融经营性现金流占营收比重已在三季报确认底部。",
+            "truncated": false
+          }
+        ]
+      },
+      "liquidity_chip_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "etf_institutional_inflow",
+        "claim_summary": "宽基ETF在回调周逆势净申购逾340亿，机构中长线底仓承接力坚实。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P9-S3"
+        ],
+        "evidence": [
+          {
+            "page": 9,
+            "pid": "P9-S3",
+            "heading": "二、微观流动性",
+            "text": "中证A500与沪深300 ETF回调中持续获大额净申购，封杀指数下行空间。",
+            "truncated": false
+          }
+        ]
+      },
+      "policy_risk_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "fiscal_debt_resolution",
+        "claim_summary": "12月上旬政治局会议与中央经济工作会议临近，明年赤字率与促消费补贴接续具备超预期期权。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P11-S2"
+        ],
+        "evidence": [
+          {
+            "page": 11,
+            "pid": "P11-S2",
+            "heading": "三、政策展望",
+            "text": "预计12月重磅会议将在服务消费扩容、生育补贴及化债接续上给出更具象的增量抓手。",
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "style_slots": {
+      "size_style_slot": {
+        "preference": "large_cap",
+        "vote_eligible": true,
+        "rationale": "岁末考核与险资开门红共振，绩优大盘核心资产相对微盘占优。",
+        "evidence_pids": [
+          "P13-S1"
+        ],
+        "evidence": [
+          {
+            "page": 13,
+            "pid": "P13-S1",
+            "heading": "四、风格配置",
+            "text": "岁末机构考核期绩优大盘蓝筹胜率显著高于纯题材微盘。",
+            "truncated": false
+          }
+        ]
+      },
+      "valuation_style_slot": {
+        "preference": "quality_core_assets",
+        "vote_eligible": true,
+        "rationale": "从纯防御低波红利转向具备内需与自主可控催化的绩优白马。",
+        "evidence_pids": [
+          "P13-S2"
+        ],
+        "evidence": [
+          {
+            "page": 13,
+            "pid": "P13-S2",
+            "heading": "四、风格配置",
+            "text": "逐步降低纯防御公用事业权重，增配绩优成长与消费白马。",
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "电子"
+          ],
+          "canonical_narrative": "ai_compute_semicon_autonomy",
+          "raw_theme_phrase": "先进封装与国产设备",
+          "catalyst_logic": "晶圆厂先进制程招标四季度环比提速，自主可控业绩能见度最高。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P15-S1"
+          ],
+          "evidence": [
+            {
+              "page": 15,
+              "pid": "P15-S1",
+              "heading": "五、行业配置",
+              "text": "国内头部晶圆厂扩产招标提速，刻蚀、薄膜沉积及先进封装订单饱满。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "家用电器",
+            "汽车",
+            "商贸零售"
+          ],
+          "canonical_narrative": "trade_in_service_consumption",
+          "raw_theme_phrase": "以旧换新与冰雪首发经济",
+          "catalyst_logic": "多地释放跨年补贴无缝接续信号，12月经济工作会议核心博弈方向。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P16-S2"
+          ],
+          "evidence": [
+            {
+              "page": 16,
+              "pid": "P16-S2",
+              "heading": "五、行业配置",
+              "text": "消费品以旧换新有望扩围至3C数码与服务消费，家电整车估值与政策期权兼备。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "基础化工"
+          ],
+          "canonical_narrative": "supply_clearing_anti_involution",
+          "raw_theme_phrase": "反内卷化工龙头",
+          "catalyst_logic": "在建工程连续6季收缩，行业自律挺价促成价格底领先出现。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P17-S1"
+          ],
+          "evidence": [
+            {
+              "page": 17,
+              "pid": "P17-S1",
+              "heading": "五、行业配置",
+              "text": "综合整治内卷式竞争深化，低PB化工龙头左侧赔率极佳。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": [
+        {
+          "sw_level1_list": [
+            "公用事业"
+          ],
+          "canonical_narrative": "high_dividend_soe_valuation",
+          "raw_theme_phrase": "火电绿电长协电价",
+          "catalyst_logic": "明年年度长协电价下调预期压制公用事业红利相对弹性。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P17-S4"
+          ],
+          "evidence": [
+            {
+              "page": 17,
+              "pid": "P17-S4",
+              "heading": "五、行业配置",
+              "text": "部分省份年度长协电价签约偏弱，建议下调电力红利权重。",
+              "truncated": false
+            }
+          ]
+        }
+      ]
+    },
+    "data_nuggets_slot": [
+      {
+        "category": "valuation_calendar",
+        "metric_phrase": "近15年12月大盘消费超额胜率 73%",
+        "forward_implication": "政治局会议前窗口机构重仓白马与家电消费显著跑赢高换手小盘题材。",
+        "chart_likely_on_page": true,
+        "primary_page": 14,
+        "evidence_pids": [
+          "P14-S2"
+        ],
+        "evidence": [
+          {
+            "page": 14,
+            "pid": "P14-S2",
+            "heading": "图8：岁末日历效应复盘",
+            "text": "回测2010–2025年12月行情，沪深300与家电消费在重磅会议前胜率达73%，微盘股在12月下旬易现季节性回撤。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "catalysts_slot": [
+      {
+        "time_window": "2026-11-30",
+        "event_title": "中国11月官方制造业PMI公布",
+        "scenario_impact": "若连续两月站稳50.2%上方将直接催化顺周期化工与内需蓝筹估值修复；回落则资金回流科技主题。",
+        "evidence_pids": [
+          "P20-S1"
+        ],
+        "evidence": [
+          {
+            "page": 20,
+            "pid": "P20-S1",
+            "heading": "六、近期催化日历",
+            "text": "11月30日官方制造业PMI是验证一揽子增量政策实物工作量的首个关键读数。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "time_window": "2026-12上旬",
+        "event_title": "中央政治局会议 & 中央经济工作会议",
+        "scenario_impact": "聚焦明年赤字率空间、促消费直接补贴扩围及房地产收储定调，决定跨年主升浪斜率。",
+        "evidence_pids": [
+          "P20-S2"
+        ],
+        "evidence": [
+          {
+            "page": 20,
+            "pid": "P20-S2",
+            "heading": "六、近期催化日历",
+            "text": "12月上旬中央政治局会议与经济工作会议将定调2027年财政扩张力度与内需抓手。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "golden_stocks_slot": [
+      {
+        "stock_name": "北方华创",
+        "stock_code": "002371.SZ",
+        "sw_level1": "电子",
+        "portfolio_role": "core_bellwether",
+        "recommend_logic": "先进制程设备本土化率加速提升，四季度新签订单饱满。",
+        "evidence_pids": [
+          "P22-S1"
+        ],
+        "evidence": [
+          {
+            "page": 22,
+            "pid": "P22-S1",
+            "heading": "七、12月金股组合",
+            "text": "北方华创(002371.SZ)：自主可控设备核心中军，业绩确定性居首。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "万华化学",
+        "stock_code": "600309.SH",
+        "sw_level1": "基础化工",
+        "portfolio_role": "turnaround_alpha",
+        "recommend_logic": "全球产能出清叠加化债稳内需，十年底部PB具备高赔率。",
+        "evidence_pids": [
+          "P22-S2"
+        ],
+        "evidence": [
+          {
+            "page": 22,
+            "pid": "P22-S2",
+            "heading": "七、12月金股组合",
+            "text": "万华化学(600309.SH)：本期新调入，顺周期供给侧出清核心底仓。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "美的集团",
+        "stock_code": "000333.SZ",
+        "sw_level1": "家用电器",
+        "portfolio_role": "dividend_defensive",
+        "recommend_logic": "以旧换新补贴跨年接续核心受益，4.5%股息率提供安全垫。",
+        "evidence_pids": [
+          "P22-S3"
+        ],
+        "evidence": [
+          {
+            "page": 22,
+            "pid": "P22-S3",
+            "heading": "七、12月金股组合",
+            "text": "美的集团(000333.SZ)：内需补贴接续+稳健分红搭台首选。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "risk_invalidator_slot": {
+      "risk_summary": "若12月中旬政策定调低于预期且北美关税清单提前落地，需防范抢跑资金阶段性兑现。",
+      "evidence_pids": [
+        "P25-S1"
+      ],
+      "evidence": [
+        {
+          "page": 25,
+          "pid": "P25-S1",
+          "heading": "风险提示",
+          "text": "需跟踪12月增量财政规模预期差及北美关税清单节奏。",
+          "truncated": false
+        }
+      ]
+    }
+  },
+  {
+    "report_id": "demo_w48_sws_0102",
+    "is_demo": true,
+    "broker": "申万宏源证券",
+    "series": "策略一周回顾展望",
+    "series_role": "flagship",
+    "title": "抢跑之后看验证，岁末先做“高低切”震荡整固",
+    "report_date": "2026-11-23",
+    "week_mon": "2026-11-23",
+    "is_core": true,
+    "source_file": "6539200-申万宏源-策略一周回顾展望：抢跑之后看验证，岁末先做高低切-261123.pdf",
+    "total_pages": 18,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "常年多头罕见提示短期性价比下降：TMT与微盘成交占比逼近38%警戒线，建议高低切整固。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "neutral_range",
+      "position_guidance": "medium_standard",
+      "self_declared_shift": "turn_more_cautious",
+      "marginal_shift_note": "从连续多周「积极进攻」下调至「中性震荡整固」，提示春季躁动提前抢跑后短期赔率回落。",
+      "index_target": {
+        "index_name": "上证指数",
+        "point_floor": 3250.0,
+        "point_ceiling": 3450.0
+      },
+      "vote_eligible": true,
+      "thesis_summary": "TMT及微盘成交占比再度逼近38%历史阻力位，距12月重磅会议尚有两周验证空窗，岁末考核锁盈诉求下预计上证在3250-3450区间整固。",
+      "evidence_pids": [
+        "P2-S1"
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "pid": "P2-S1",
+          "heading": "核心结论速览",
+          "text": "当前TMT及微盘指数成交额占比再度逼近38%的历史经验阻力位，岁末机构考核锁盈诉求放大高标波动，预计短期上证指数在3250至3450点区间震荡整固，建议做高低切保护收益。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": {
+        "direction": "bearish_drag",
+        "canonical_topic": "ppi_earnings_roe",
+        "claim_summary": "11月工业品现货价格季节性偏弱，PPI同比转正仍需等待明年二季度验证，纯拔估值难撑普涨。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P5-S2"
+        ],
+        "evidence": [
+          {
+            "page": 5,
+            "pid": "P5-S2",
+            "heading": "一、基本面验证",
+            "text": "11月以来螺纹钢与部分化工品现货价格偏弱，四季度盈利预测仍在温和下修通道。",
+            "truncated": false
+          }
+        ]
+      },
+      "liquidity_chip_slot": {
+        "direction": "bearish_drag",
+        "canonical_topic": "crowding_year_end_rebalance",
+        "claim_summary": "微盘与科创题材成交额占比达37.8%过热走廊，叠加12月公募年度排名结算易引发高标股兑现。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P7-S1"
+        ],
+        "evidence": [
+          {
+            "page": 7,
+            "pid": "P7-S1",
+            "heading": "二、交易结构监控",
+            "text": "亏损股指数相对绩优股超额已达近三年96%分位极值，岁末考核结账期需严防高换手小票踩踏。",
+            "truncated": false
+          }
+        ]
+      },
+      "policy_risk_slot": null
+    },
+    "style_slots": {
+      "size_style_slot": {
+        "preference": "large_cap",
+        "vote_eligible": true,
+        "rationale": "规避交易过热的微盘题材，向低位大中盘蓝筹高低切。",
+        "evidence_pids": [
+          "P8-S1"
+        ],
+        "evidence": [
+          {
+            "page": 8,
+            "pid": "P8-S1",
+            "heading": "风格建议",
+            "text": "建议从高换手微盘向低位大盘价值与绩优龙头高低切。",
+            "truncated": false
+          }
+        ]
+      },
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "家用电器",
+            "食品饮料"
+          ],
+          "canonical_narrative": "trade_in_service_consumption",
+          "raw_theme_phrase": "内需必选消费",
+          "catalyst_logic": "低涨幅、低拥挤且受益年底促消费政策预期。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P11-S1"
+          ],
+          "evidence": [
+            {
+              "page": 11,
+              "pid": "P11-S1",
+              "heading": "三、高低切方向",
+              "text": "高低切首选筹码干净、估值合理的家用电器与大众品龙头。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "电力设备"
+          ],
+          "canonical_narrative": "solid_battery_new_energy_turnaround",
+          "raw_theme_phrase": "固态电池与锂电排产",
+          "catalyst_logic": "机构超配比例处于四年最低，11月排产逆季节性上修。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P12-S1"
+          ],
+          "evidence": [
+            {
+              "page": 12,
+              "pid": "P12-S1",
+              "heading": "三、高低切方向",
+              "text": "关注低位困境反转且有固态电池中试催化的锂电设备与材料。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": [
+        {
+          "sw_level1_list": [
+            "电子",
+            "计算机"
+          ],
+          "canonical_narrative": "ai_compute_semicon_autonomy",
+          "raw_theme_phrase": "高位纯概念算力小票",
+          "catalyst_logic": "成交占比触及过热阈值，无订单支撑的高标面临回撤。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P13-S1"
+          ],
+          "evidence": [
+            {
+              "page": 13,
+              "pid": "P13-S1",
+              "heading": "风险规避",
+              "text": "短期规避无基本面支撑、纯游资博弈的高位TMT概念小票。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "机械设备",
+            "轻工制造"
+          ],
+          "canonical_narrative": "north_america_export_chain",
+          "raw_theme_phrase": "纯北美敞口出口链",
+          "catalyst_logic": "海外60%关税清单扰动压制中长期估值。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P13-S3"
+          ],
+          "evidence": [
+            {
+              "page": 13,
+              "pid": "P13-S3",
+              "heading": "风险规避",
+              "text": "规避对北美营收敞口超25%且缺乏海外产能闭环的出口品种。",
+              "truncated": false
+            }
+          ]
+        }
+      ]
+    },
+    "data_nuggets_slot": [
+      {
+        "category": "flow_crowding",
+        "metric_phrase": "TMT+微盘成交占比升至 37.8%",
+        "forward_implication": "距历史经验调整阈值(40%)仅一步之遥，过往触及该走廊均伴随2-3周高低切洗盘。",
+        "chart_likely_on_page": true,
+        "primary_page": 7,
+        "evidence_pids": [
+          "P7-S1"
+        ],
+        "evidence": [
+          {
+            "page": 7,
+            "pid": "P7-S1",
+            "heading": "图3：科技及微盘成交额占比拥挤度走廊",
+            "text": "过去三年每当TMT与微盘成交占比合计触及38%–40%走廊上沿时，板块内部均会经历2–3周剧烈高低切。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "catalysts_slot": [
+      {
+        "time_window": "2026-12-18",
+        "event_title": "美联储12月FOMC议息决议",
+        "scenario_impact": "若如期降息25bp缓释强美元压力，外资流出有望企稳；若释放暂停降息鹰派信号则内需自主可控更占优。",
+        "evidence_pids": [
+          "P15-S2"
+        ],
+        "evidence": [
+          {
+            "page": 15,
+            "pid": "P15-S2",
+            "heading": "四、海外日历",
+            "text": "12月18日美联储议息决议与点阵图将决定年末全球无风险利率走向。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "golden_stocks_slot": [
+      {
+        "stock_name": "美的集团",
+        "stock_code": "000333.SZ",
+        "sw_level1": "家用电器",
+        "portfolio_role": "dividend_defensive",
+        "recommend_logic": "岁末高低切稳健首选。",
+        "evidence_pids": [
+          "P16-S1"
+        ],
+        "evidence": [
+          {
+            "page": 16,
+            "pid": "P16-S1",
+            "heading": "金股跟踪",
+            "text": "美的集团：估值合理且受益家电补贴接续。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w48_gf_0103",
+    "is_demo": true,
+    "broker": "广发证券",
+    "series": "周末五分钟全知道",
+    "series_role": "flagship",
+    "title": "赔率钟摆再平衡：从纯红利防御走向顺周期反转与AI端侧",
+    "report_date": "2026-11-24",
+    "week_mon": "2026-11-23",
+    "is_core": true,
+    "source_file": "6539410-广发证券-周末五分钟全知道(11月第4期)：赔率钟摆再平衡-261124.pdf",
+    "total_pages": 25,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "制造业Capex连续6季负增出清到位，由红利防御转向“低PB顺周期+AI端侧应用”进攻哑铃。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "structural_bull",
+      "position_guidance": "barbell_balanced",
+      "self_declared_shift": "pivot_style_or_structure",
+      "marginal_shift_note": "结束连续四周「防御谨慎」定调，转向「低PB顺周期困境反转 + AI端侧应用」积极轮动。",
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "中游制造业资本开支同比降至-7.8%十年冰点，向下赔率极度保护，建议将组合红利底仓置换为顺周期龙头与AI端侧。",
+      "evidence_pids": [
+        "P3-S1"
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "pid": "P3-S1",
+          "heading": "一、赔率钟摆跟踪",
+          "text": "制造业中游已连续6个季度产能扩张放缓，供给侧出清接近2016年初水平，建议从纯红利防御转向困境反转与AI应用进攻。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "supply_capex_clearing",
+        "claim_summary": "全A非金融石油石化Capex同比连续6季收缩至-7.8%，在建工程拐点领先ROE修复约2个季度。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P9-S2"
+        ],
+        "evidence": [
+          {
+            "page": 9,
+            "pid": "P9-S2",
+            "heading": "二、供给侧出清量化筛选",
+            "text": "三季报全A非金融Capex同比降至-7.8%，基础化工、锂电中游资本开支削减最彻底，龙头自由现金流率先拐头。",
+            "truncated": false
+          }
+        ]
+      },
+      "liquidity_chip_slot": null,
+      "policy_risk_slot": {
+        "direction": "bearish_drag",
+        "canonical_topic": "tariff_geopolitics_risk",
+        "claim_summary": "北美新一轮关税与科技出口管制传闻反复，纯外需叙事面临阶段性估值折价。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P12-S3"
+        ],
+        "evidence": [
+          {
+            "page": 12,
+            "pid": "P12-S3",
+            "heading": "三、外部约束",
+            "text": "明年一季度关税政策落地前，北美高敞口链条难以获得机构增量加仓。",
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": {
+        "preference": "cyclical_turnaround",
+        "vote_eligible": true,
+        "rationale": "PB历史15%分位以下的顺周期与新能源中游龙头具备极佳赔率。",
+        "evidence_pids": [
+          "P9-S3"
+        ],
+        "evidence": [
+          {
+            "page": 9,
+            "pid": "P9-S3",
+            "heading": "风格结论",
+            "text": "重点配置低PB高现金流的顺周期与中游反转龙头。",
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "电力设备"
+          ],
+          "canonical_narrative": "solid_battery_new_energy_turnaround",
+          "raw_theme_phrase": "全固态电池中试线",
+          "catalyst_logic": "11月电池排产环比逆势+6.2%，叠加全固态设备招标催化与极低机构持仓。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P14-S1"
+          ],
+          "evidence": [
+            {
+              "page": 14,
+              "pid": "P14-S1",
+              "heading": "四、主线推荐",
+              "text": "主流电池厂11月排产淡季不淡环比+6.2%，全固态中试设备进入实质定标期。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "计算机",
+            "传媒",
+            "电子"
+          ],
+          "canonical_narrative": "ai_application_smart_hardware",
+          "raw_theme_phrase": "AI眼镜与多模态Agent",
+          "catalyst_logic": "美股AI应用财报商业化斜率陡峭映射，叠加化债改善政企IT回款。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P15-S2"
+          ],
+          "evidence": [
+            {
+              "page": 15,
+              "pid": "P15-S2",
+              "heading": "四、主线推荐",
+              "text": "AI投资正从算力底座向端侧智能眼镜与B端Agent商业化应用扩散。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "基础化工",
+            "机械设备"
+          ],
+          "canonical_narrative": "supply_clearing_anti_involution",
+          "raw_theme_phrase": "低PB化工与通用工控",
+          "catalyst_logic": "在建工程增速见底，供给侧反内卷自律限产。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P16-S1"
+          ],
+          "evidence": [
+            {
+              "page": 16,
+              "pid": "P16-S1",
+              "heading": "四、主线推荐",
+              "text": "基础化工与通用自动化PB处于历史12%分位，赔率极佳。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": [
+        {
+          "sw_level1_list": [
+            "银行",
+            "公用事业"
+          ],
+          "canonical_narrative": "high_dividend_soe_valuation",
+          "raw_theme_phrase": "高位防御红利",
+          "catalyst_logic": "风险偏好回升窗口红利超额弹性趋弱，建议适度置换至顺周期底仓。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P17-S1"
+          ],
+          "evidence": [
+            {
+              "page": 17,
+              "pid": "P17-S1",
+              "heading": "配置调整",
+              "text": "适度下调纯防御红利比例，置换为更具向上期权的顺周期龙头。",
+              "truncated": false
+            }
+          ]
+        }
+      ]
+    },
+    "data_nuggets_slot": [
+      {
+        "category": "meso_fundamental",
+        "metric_phrase": "非金融Capex同比 -7.8% (连续6季收缩)",
+        "forward_implication": "供给侧出清程度逼近2016年初，此分位买入中游制造业龙头一年正收益胜率高。",
+        "chart_likely_on_page": true,
+        "primary_page": 9,
+        "evidence_pids": [
+          "P9-S2"
+        ],
+        "evidence": [
+          {
+            "page": 9,
+            "pid": "P9-S2",
+            "heading": "图8：全A非金融Capex同比历史分位",
+            "text": "当制造业资本开支增速跌破-5%且持续四个季度以上时，龙头毛利率和自由现金流率先迎来非线性修复。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "category": "meso_fundamental",
+        "metric_phrase": "11月Top5电池厂排产环比 +6.2%",
+        "forward_implication": "打破往年四季度减产去库惯例，印证储能与商用车需求超预期。",
+        "chart_likely_on_page": true,
+        "primary_page": 14,
+        "evidence_pids": [
+          "P14-S1"
+        ],
+        "evidence": [
+          {
+            "page": 14,
+            "pid": "P14-S1",
+            "heading": "图12：新能源中游高频排产跟踪",
+            "text": "往年11月下旬锂电普遍进入减产期，今年排产逆势环比增长6.2%，筹码与基本面形成预期差。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "catalysts_slot": [
+      {
+        "time_window": "2026-12下旬",
+        "event_title": "机构年度考核结算 & 年报业绩预告前瞻窗口",
+        "scenario_impact": "险资开门红提前抢筹低估值高现金流白马，而无业绩支撑的亏损题材小票面临年报预告排雷压力。",
+        "evidence_pids": [
+          "P21-S1"
+        ],
+        "evidence": [
+          {
+            "page": 21,
+            "pid": "P21-S1",
+            "heading": "五、岁末应对日历",
+            "text": "12月下旬需在年报预告窗口前完成亏损小票排雷，切换至订单兑现龙头。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "golden_stocks_slot": [
+      {
+        "stock_name": "先导智能",
+        "stock_code": "300450.SZ",
+        "sw_level1": "电力设备",
+        "portfolio_role": "turnaround_alpha",
+        "recommend_logic": "全固态电池干法电极与等静压整线设备获头部客户中试订单，首次新调入金股池。",
+        "evidence_pids": [
+          "P23-S1"
+        ],
+        "evidence": [
+          {
+            "page": 23,
+            "pid": "P23-S1",
+            "heading": "12月金股组合",
+            "text": "先导智能(300450.SZ)：固态中试线设备核心卡位，坏账计提充分释放。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "万华化学",
+        "stock_code": "600309.SH",
+        "sw_level1": "基础化工",
+        "portfolio_role": "turnaround_alpha",
+        "recommend_logic": "化工资本开支拐点核心代表，替代高位防御底仓。",
+        "evidence_pids": [
+          "P23-S2"
+        ],
+        "evidence": [
+          {
+            "page": 23,
+            "pid": "P23-S2",
+            "heading": "12月金股组合",
+            "text": "万华化学(600309.SH)：MDI一体化壁垒稳固，PB处于十年低位。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "北方华创",
+        "stock_code": "002371.SZ",
+        "sw_level1": "电子",
+        "portfolio_role": "core_bellwether",
+        "recommend_logic": "国产半导体设备业绩高确定性中军。",
+        "evidence_pids": [
+          "P23-S3"
+        ],
+        "evidence": [
+          {
+            "page": 23,
+            "pid": "P23-S3",
+            "heading": "12月金股组合",
+            "text": "北方华创(002371.SZ)：晶圆厂扩产招标提速直接受益。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "恒玄科技",
+        "stock_code": "688608.SH",
+        "sw_level1": "电子",
+        "portfolio_role": "growth_elasticity",
+        "recommend_logic": "AI智能眼镜端侧低功耗SoC新品密集发布放量。",
+        "evidence_pids": [
+          "P23-S4"
+        ],
+        "evidence": [
+          {
+            "page": 23,
+            "pid": "P23-S4",
+            "heading": "12月金股组合",
+            "text": "恒玄科技(688608.SH)：端侧AI眼镜主控SoC芯片业绩高弹性先锋。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w48_gtht_0104",
+    "is_demo": true,
+    "broker": "国泰海通证券",
+    "series": "中国权益策略周报",
+    "series_role": "flagship",
+    "title": "跨年行情决胜内需斜率，重视破净央企与自主可控双主线",
+    "report_date": "2026-11-24",
+    "week_mon": "2026-11-23",
+    "is_core": true,
+    "source_file": "6539512-国泰海通证券-中国权益策略周报：跨年行情决胜内需斜率-261124.pdf",
+    "total_pages": 21,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "积极看多跨年窗口，聚焦自主可控科技、内需补贴消费与市值管理破净央企重估。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "aggressive_bull",
+      "position_guidance": "high_overweight",
+      "self_declared_shift": "maintain_stance",
+      "marginal_shift_note": null,
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "应对外部关税不确定性的最优解是做强国内大循环，市值管理正式稿叠加12月财政扩张预期支撑积极做多。",
+      "evidence_pids": [
+        "P2-S2"
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "pid": "P2-S2",
+          "heading": "核心观点",
+          "text": "市值管理新规正式稿打通长期破净央企估值修复闭环，维持积极进攻仓位建议。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": null,
+      "liquidity_chip_slot": null,
+      "policy_risk_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "capital_market_soe_reform",
+        "claim_summary": "上市公司市值管理指引正式稿落地，松绑异动约束并强化中证A500等宽基破净央企估值提升计划。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P6-S2"
+        ],
+        "evidence": [
+          {
+            "page": 6,
+            "pid": "P6-S2",
+            "heading": "政策解读",
+            "text": "市值管理正式稿将主要宽基指数成分股悉数纳入，长期破净央企通过分红与回购修复PB空间打开。",
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "电子"
+          ],
+          "canonical_narrative": "ai_compute_semicon_autonomy",
+          "raw_theme_phrase": "国产算力与HBM材料",
+          "catalyst_logic": "北美出口管制倒逼国产算力底座与先进封装加速突破。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P10-S1"
+          ],
+          "evidence": [
+            {
+              "page": 10,
+              "pid": "P10-S1",
+              "heading": "行业推荐",
+              "text": "继续把国产算力芯片、先进封装与HBM材料作为科技进攻首推方向。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "建筑装饰",
+            "银行"
+          ],
+          "canonical_narrative": "debt_relief_fiscal_beneficiary",
+          "raw_theme_phrase": "破净基建央企与化债",
+          "catalyst_logic": "化债资金置换改善工程应收账款，叠加市值管理破净重估。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P11-S2"
+          ],
+          "evidence": [
+            {
+              "page": 11,
+              "pid": "P11-S2",
+              "heading": "行业推荐",
+              "text": "专项债置换隐性债务直接疏通建筑央企回款痛点，PB<0.7破净央企迎重估。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "电力设备"
+          ],
+          "canonical_narrative": "solid_battery_new_energy_turnaround",
+          "raw_theme_phrase": "固态电池与储能出海",
+          "catalyst_logic": "新兴产业技术突破叠加中东非美大储订单放量。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P12-S1"
+          ],
+          "evidence": [
+            {
+              "page": 12,
+              "pid": "P12-S1",
+              "heading": "行业推荐",
+              "text": "增配固态电池设备材料与非美大储龙头。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": []
+    },
+    "data_nuggets_slot": [
+      {
+        "category": "valuation_calendar",
+        "metric_phrase": "420家破净国央企 (PB<0.8且现金流>8%)",
+        "forward_implication": "市值管理指引正式稿落地后，建筑、交运、股份行高自由现金流破净央企重估赔率突出。",
+        "chart_likely_on_page": true,
+        "primary_page": 11,
+        "evidence_pids": [
+          "P11-S3"
+        ],
+        "evidence": [
+          {
+            "page": 11,
+            "pid": "P11-S3",
+            "heading": "表2：破净高现金流央企筛选名单",
+            "text": "全A共计420家国央企处于破净状态，其中PB低于0.8倍且自由现金流收益率超8%的标的具备强回购分红动力。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [
+      {
+        "stock_name": "中国建筑",
+        "stock_code": "601668.SH",
+        "sw_level1": "建筑装饰",
+        "portfolio_role": "policy_theme",
+        "recommend_logic": "化债改善工程回款+市值管理破净修复双催化，PE仅4倍、股息率超5%。",
+        "evidence_pids": [
+          "P18-S1"
+        ],
+        "evidence": [
+          {
+            "page": 18,
+            "pid": "P18-S1",
+            "heading": "重点标的",
+            "text": "中国建筑(601668.SH)：本期新纳入，化债与破净市值管理双重受益核心标的。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "北方华创",
+        "stock_code": "002371.SZ",
+        "sw_level1": "电子",
+        "portfolio_role": "core_bellwether",
+        "recommend_logic": "半导体设备国产替代龙头。",
+        "evidence_pids": [
+          "P18-S2"
+        ],
+        "evidence": [
+          {
+            "page": 18,
+            "pid": "P18-S2",
+            "heading": "重点标的",
+            "text": "北方华创(002371.SZ)：晶圆厂资本开支扩产确定性标的。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "恒玄科技",
+        "stock_code": "688608.SH",
+        "sw_level1": "电子",
+        "portfolio_role": "growth_elasticity",
+        "recommend_logic": "AI端侧可穿戴SoC放量。",
+        "evidence_pids": [
+          "P18-S3"
+        ],
+        "evidence": [
+          {
+            "page": 18,
+            "pid": "P18-S3",
+            "heading": "重点标的",
+            "text": "恒玄科技(688608.SH)：端侧AI智能眼镜SoC核心受益。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w48_cms_0105",
+    "is_demo": true,
+    "broker": "招商证券",
+    "series": "A股投资策略周报",
+    "series_role": "flagship",
+    "title": "宽基ETF单周逆势净申购346亿，岁末大盘龙头风格回归",
+    "report_date": "2026-11-24",
+    "week_mon": "2026-11-23",
+    "is_core": true,
+    "source_file": "6539601-招商证券-A股投资策略周报：宽基ETF逆势净申购，大盘风格占优-261124.pdf",
+    "total_pages": 32,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "被动ETF与险资年底配置盘形成增量托底，积极看多中证A500核心龙头。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "aggressive_bull",
+      "position_guidance": "high_overweight",
+      "self_declared_shift": "turn_more_positive",
+      "marginal_shift_note": "基于宽基ETF连续大额逆势申购与两融回落出清，上调大盘核心宽基配置等级。",
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "沪深300与A500 ETF单周逆势净流入346亿元创五周新高，两融成交占比回落至8.9%健康水位，大盘核心资产重拾定价权。",
+      "evidence_pids": [
+        "P3-S2"
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "pid": "P3-S2",
+          "heading": "核心策略观点",
+          "text": "宽基ETF逆势大幅净申购346亿元，与两融杠杆降温形成鲜明剪刀差，中长线资金正在夯实岁末市场底部。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": null,
+      "liquidity_chip_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "etf_institutional_inflow",
+        "claim_summary": "A500与沪深300 ETF单周净申购346亿，叠加险资三季度权益配比创10年新高，长线增量资金底明确。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P11-S1"
+        ],
+        "evidence": [
+          {
+            "page": 11,
+            "pid": "P11-S1",
+            "heading": "图14：微观流动性拆解",
+            "text": "被动指数基金规模突破3.6万亿，回调周逆势净流入346亿，两融成交占比降至8.9%安全区。",
+            "truncated": false
+          }
+        ]
+      },
+      "policy_risk_slot": null
+    },
+    "style_slots": {
+      "size_style_slot": {
+        "preference": "large_cap",
+        "vote_eligible": true,
+        "rationale": "ETF与险资增量集中在沪深300与中证A500成分股。",
+        "evidence_pids": [
+          "P14-S1"
+        ],
+        "evidence": [
+          {
+            "page": 14,
+            "pid": "P14-S1",
+            "heading": "风格研判",
+            "text": "增量资金结构决定岁末大盘高质量龙头显著占优。",
+            "truncated": false
+          }
+        ]
+      },
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "电子",
+            "计算机"
+          ],
+          "canonical_narrative": "ai_application_smart_hardware",
+          "raw_theme_phrase": "AI端侧硬件与科创龙头",
+          "catalyst_logic": "新品周期密集催化且属于A500新质生产力核心权重。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P19-S1"
+          ],
+          "evidence": [
+            {
+              "page": 19,
+              "pid": "P19-S1",
+              "heading": "行业配置",
+              "text": "重点配置具备业绩兑现能力的AI端侧硬件与半导体龙头。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "家用电器",
+            "汽车"
+          ],
+          "canonical_narrative": "trade_in_service_consumption",
+          "raw_theme_phrase": "以旧换新消费白马",
+          "catalyst_logic": "高ROE与高分红属性契合机构年底稳健加仓需求。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P20-S1"
+          ],
+          "evidence": [
+            {
+              "page": 20,
+              "pid": "P20-S1",
+              "heading": "行业配置",
+              "text": "家电与整车龙头兼具补贴催化与稳健现金流回报。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": []
+    },
+    "data_nuggets_slot": [
+      {
+        "category": "flow_crowding",
+        "metric_phrase": "宽基ETF单周净申购 +346亿元 (两融占比降至8.9%)",
+        "forward_implication": "被动配置盘逆势承接而短线杠杆资金完成降温洗盘，筹码结构显著优化。",
+        "chart_likely_on_page": true,
+        "primary_page": 11,
+        "evidence_pids": [
+          "P11-S1"
+        ],
+        "evidence": [
+          {
+            "page": 11,
+            "pid": "P11-S1",
+            "heading": "图14：宽基ETF与两融净流入周度背离",
+            "text": "两融成交占比回落至9%以下通常对应短期情绪洗盘接近尾声，而宽基ETF提供强劲下沿托底。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [
+      {
+        "stock_name": "先导智能",
+        "stock_code": "300450.SZ",
+        "sw_level1": "电力设备",
+        "portfolio_role": "turnaround_alpha",
+        "recommend_logic": "固态电池设备催化叠加中证A500成分权重。",
+        "evidence_pids": [
+          "P28-S1"
+        ],
+        "evidence": [
+          {
+            "page": 28,
+            "pid": "P28-S1",
+            "heading": "月度推荐组合",
+            "text": "先导智能(300450.SZ)：固态中试线设备新催化标的。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "美的集团",
+        "stock_code": "000333.SZ",
+        "sw_level1": "家用电器",
+        "portfolio_role": "dividend_defensive",
+        "recommend_logic": "险资与宽基ETF共振增配核心白马。",
+        "evidence_pids": [
+          "P28-S2"
+        ],
+        "evidence": [
+          {
+            "page": 28,
+            "pid": "P28-S2",
+            "heading": "月度推荐组合",
+            "text": "美的集团(000333.SZ)：高股息消费白马龙头。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w48_cicc_0106",
+    "is_demo": true,
+    "broker": "中金公司",
+    "series": "A股策略周报",
+    "series_role": "flagship",
+    "title": "预期先行之后，基本面修复斜率决定跨年高度",
+    "report_date": "2026-11-24",
+    "week_mon": "2026-11-23",
+    "is_core": true,
+    "source_file": "中金公司-20261124-预期先行之后，基本面修复斜率决定跨年高度.pdf",
+    "total_pages": 20,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "维持中性偏稳健定调：货币活化到PPI转正仍有时滞，建议哑铃配置内需龙头与高股息。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "neutral_range",
+      "position_guidance": "barbell_balanced",
+      "self_declared_shift": "maintain_stance",
+      "marginal_shift_note": null,
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "M1改善积极但传导至PPI与企业名义ROE转正需2-3个季度时滞，美债利率偏高背景下维持震荡结构市判断。",
+      "evidence_pids": [
+        "P3-S1"
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "pid": "P3-S1",
+          "heading": "一、市场展望",
+          "text": "从货币脉冲到价格端走出通缩存在时滞，四季度盈利一致预期仍温和下修，指数以结构性震荡为主。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": {
+        "direction": "bearish_drag",
+        "canonical_topic": "ppi_earnings_roe",
+        "claim_summary": "PPI同比仍处负值区间，全A非金融四季度盈利一致预期本周微幅下修0.4pct，基本面斜率仍待巩固。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P6-S2"
+        ],
+        "evidence": [
+          {
+            "page": 6,
+            "pid": "P6-S2",
+            "heading": "二、盈利预测跟踪",
+            "text": "上市公司四季度盈利一致预期仍处温和下修通道，全面基本面牛市尚需等待明年二季度验证。",
+            "truncated": false
+          }
+        ]
+      },
+      "liquidity_chip_slot": {
+        "direction": "bearish_drag",
+        "canonical_topic": "fed_fx_foreign_flow",
+        "claim_summary": "10年期美债利率维持4.3%上方震荡，配置型外资近期对新兴市场整体呈观望净流出态势。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P8-S2"
+        ],
+        "evidence": [
+          {
+            "page": 8,
+            "pid": "P8-S2",
+            "heading": "三、海外流动性",
+            "text": "强美元与高美债利率短期仍对港股及A股外资回流节奏构成约束。",
+            "truncated": false
+          }
+        ]
+      },
+      "policy_risk_slot": null
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "家用电器",
+            "食品饮料"
+          ],
+          "canonical_narrative": "trade_in_service_consumption",
+          "raw_theme_phrase": "内需消费龙头",
+          "catalyst_logic": "估值消化充分且直接受益促消费政策。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P12-S1"
+          ],
+          "evidence": [
+            {
+              "page": 12,
+              "pid": "P12-S1",
+              "heading": "四、配置建议",
+              "text": "关注估值合理且受益内需政策接续的家电与食品饮料龙头。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "银行"
+          ],
+          "canonical_narrative": "high_dividend_soe_valuation",
+          "raw_theme_phrase": "国有大行分红底仓",
+          "catalyst_logic": "化债补充核心一级资本改善资产质量。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P12-S3"
+          ],
+          "evidence": [
+            {
+              "page": 12,
+              "pid": "P12-S3",
+              "heading": "四、配置建议",
+              "text": "国有大行受益注资与化债改善资产负债表，保留底仓配置。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": [
+        {
+          "sw_level1_list": [
+            "机械设备",
+            "轻工制造"
+          ],
+          "canonical_narrative": "north_america_export_chain",
+          "raw_theme_phrase": "高北美敞口出口股",
+          "catalyst_logic": "关税不确定性压制估值上限。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P13-S2"
+          ],
+          "evidence": [
+            {
+              "page": 13,
+              "pid": "P13-S2",
+              "heading": "四、配置建议",
+              "text": "短期审慎对待北美收入占比过高的纯出口品种。",
+              "truncated": false
+            }
+          ]
+        }
+      ]
+    },
+    "data_nuggets_slot": [],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w48_kaiyuan_0107",
+    "is_demo": true,
+    "broker": "开源证券",
+    "series": "投资策略周报",
+    "series_role": "flagship",
+    "title": "政策暖风频吹，积极进攻科技成长与内需弹性",
+    "report_date": "2026-11-24",
+    "week_mon": "2026-11-23",
+    "is_core": false,
+    "source_file": "6539710-开源证券-投资策略周报：政策暖风频吹，积极进攻科技成长-261124.pdf",
+    "total_pages": 12,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "非核心池卖方维持全面乐观，高仓位进攻AI算力与半导体。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "aggressive_bull",
+      "position_guidance": "high_overweight",
+      "self_declared_shift": "maintain_stance",
+      "marginal_shift_note": null,
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "国内政策底坚实，流动性充裕支撑科技牛市主线延续。",
+      "evidence_pids": [
+        "P1-S1"
+      ],
+      "evidence": [
+        {
+          "page": 1,
+          "pid": "P1-S1",
+          "heading": "策略摘要",
+          "text": "坚定看多跨年科技牛主线，维持高仓位进攻。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": null,
+      "liquidity_chip_slot": null,
+      "policy_risk_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "fiscal_debt_resolution",
+        "claim_summary": "地方化债与稳市机制持续发力提升市场风险偏好。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P3-S1"
+        ],
+        "evidence": [
+          {
+            "page": 3,
+            "pid": "P3-S1",
+            "heading": "政策环境",
+            "text": "稳市政策与化债资金共振提振市场风险偏好。",
+            "truncated": false
+          }
+        ]
+      }
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "电子",
+            "计算机"
+          ],
+          "canonical_narrative": "ai_compute_semicon_autonomy",
+          "raw_theme_phrase": "AI算力全链条",
+          "catalyst_logic": "算力资本开支高景气延续。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P6-S1"
+          ],
+          "evidence": [
+            {
+              "page": 6,
+              "pid": "P6-S1",
+              "heading": "配置方向",
+              "text": "全面超配电子半导体与AI算力应用。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "电力设备"
+          ],
+          "canonical_narrative": "solid_battery_new_energy_turnaround",
+          "raw_theme_phrase": "固态电池设备",
+          "catalyst_logic": "产业化催化密集落地。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P7-S1"
+          ],
+          "evidence": [
+            {
+              "page": 7,
+              "pid": "P7-S1",
+              "heading": "配置方向",
+              "text": "关注固态电池设备中试订单催化。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": []
+    },
+    "data_nuggets_slot": [],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [
+      {
+        "stock_name": "北方华创",
+        "stock_code": "002371.SZ",
+        "sw_level1": "电子",
+        "portfolio_role": "core_bellwether",
+        "recommend_logic": "半导体设备自主可控龙头。",
+        "evidence_pids": [
+          "P10-S1"
+        ],
+        "evidence": [
+          {
+            "page": 10,
+            "pid": "P10-S1",
+            "heading": "开源金股",
+            "text": "北方华创：12月金股核心推荐。",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "stock_name": "先导智能",
+        "stock_code": "300450.SZ",
+        "sw_level1": "电力设备",
+        "portfolio_role": "turnaround_alpha",
+        "recommend_logic": "固态干法电极与整线龙头。",
+        "evidence_pids": [
+          "P10-S2"
+        ],
+        "evidence": [
+          {
+            "page": 10,
+            "pid": "P10-S2",
+            "heading": "开源金股",
+            "text": "先导智能：固态电池设备新调入金股。",
+            "truncated": false
+          }
+        ]
+      }
+    ],
+    "risk_invalidator_slot": null
+  },
+  {
+    "report_id": "demo_w48_dongfang_0108",
+    "is_demo": true,
+    "broker": "东方证券",
+    "series": "策略周度思考",
+    "series_role": "flagship",
+    "title": "内稳外乱格局延续，关注科技自主可控与服务消费",
+    "report_date": "2026-11-24",
+    "week_mon": "2026-11-23",
+    "is_core": false,
+    "source_file": "6539772-东方证券-策略周度思考：内稳外乱格局延续-261124.pdf",
+    "total_pages": 11,
+    "report_meta": {
+      "archetype": "regular_periodic",
+      "one_line_takeaway": "结构性偏多，沿着自主可控与内需补贴两条阻力最小方向布局。"
+    },
+    "market_stance_slot": {
+      "stance_tier": "structural_bull",
+      "position_guidance": "barbell_balanced",
+      "self_declared_shift": "maintain_stance",
+      "marginal_shift_note": null,
+      "index_target": null,
+      "vote_eligible": true,
+      "thesis_summary": "国内稳市机制对冲外部关税扰动，结构性机会聚焦内循环与自主可控。",
+      "evidence_pids": [
+        "P2-S1"
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "pid": "P2-S1",
+          "heading": "策略思考",
+          "text": "国内政策确定性高于外部环境，维持结构性偏多配置。",
+          "truncated": false
+        }
+      ]
+    },
+    "ddm_driver_slots": {
+      "earnings_macro_slot": {
+        "direction": "bullish_support",
+        "canonical_topic": "credit_m1_pulse",
+        "claim_summary": "M1增速企稳回升叠加化债改善地方政府与国企资产负债表。",
+        "vote_eligible": true,
+        "evidence_pids": [
+          "P4-S1"
+        ],
+        "evidence": [
+          {
+            "page": 4,
+            "pid": "P4-S1",
+            "heading": "基本面线索",
+            "text": "M1企稳信号验证前期政策正在向实体现金流传导。",
+            "truncated": false
+          }
+        ]
+      },
+      "liquidity_chip_slot": null,
+      "policy_risk_slot": null
+    },
+    "style_slots": {
+      "size_style_slot": null,
+      "valuation_style_slot": null
+    },
+    "sector_allocation_slot": {
+      "overweight_lines": [
+        {
+          "sw_level1_list": [
+            "电子"
+          ],
+          "canonical_narrative": "ai_compute_semicon_autonomy",
+          "raw_theme_phrase": "半导体自主可控",
+          "catalyst_logic": "外部芯片管制升级加速国内替代。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P7-S1"
+          ],
+          "evidence": [
+            {
+              "page": 7,
+              "pid": "P7-S1",
+              "heading": "行业配置",
+              "text": "重点配置半导体设备与国产算力芯片。",
+              "truncated": false
+            }
+          ]
+        },
+        {
+          "sw_level1_list": [
+            "家用电器",
+            "商贸零售"
+          ],
+          "canonical_narrative": "trade_in_service_consumption",
+          "raw_theme_phrase": "消费券与补贴扩容",
+          "catalyst_logic": "各地年底消费券密集发放。",
+          "vote_eligible": true,
+          "evidence_pids": [
+            "P8-S1"
+          ],
+          "evidence": [
+            {
+              "page": 8,
+              "pid": "P8-S1",
+              "heading": "行业配置",
+              "text": "关注上海等地服务消费券扩容受益板块。",
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "cautious_lines": []
+    },
+    "data_nuggets_slot": [],
+    "catalysts_slot": [],
+    "golden_stocks_slot": [],
+    "risk_invalidator_slot": null
+  }
+]

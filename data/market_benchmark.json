@@ -1,0 +1,239 @@
+{
+  "as_of": "2026-11-27",
+  "source_note": "申万一级行业日度成交额占比近3年分位 & 沪深300日线（演示初始基线，Actions运行后自动刷新实盘）",
+  "hs300_latest": 4018.6,
+  "hs300_history": [
+    {
+      "date": "2026-09-11",
+      "close": 3685.2
+    },
+    {
+      "date": "2026-09-18",
+      "close": 3712.6
+    },
+    {
+      "date": "2026-09-25",
+      "close": 3840.5
+    },
+    {
+      "date": "2026-10-09",
+      "close": 3995.8
+    },
+    {
+      "date": "2026-10-16",
+      "close": 3910.4
+    },
+    {
+      "date": "2026-10-23",
+      "close": 3955.1
+    },
+    {
+      "date": "2026-10-30",
+      "close": 3892.7
+    },
+    {
+      "date": "2026-11-06",
+      "close": 4028.3
+    },
+    {
+      "date": "2026-11-13",
+      "close": 4065.9
+    },
+    {
+      "date": "2026-11-20",
+      "close": 3980.4
+    },
+    {
+      "date": "2026-11-27",
+      "close": 4018.6
+    }
+  ],
+  "sw_crowding": {
+    "农林牧渔": {
+      "code": "801010.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "基础化工": {
+      "code": "801030.SI",
+      "turnover_share_pct": 4.2,
+      "crowding_percentile_3y": 22.5,
+      "ret_5d_pct": 0.95
+    },
+    "钢铁": {
+      "code": "801040.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "有色金属": {
+      "code": "801050.SI",
+      "turnover_share_pct": 4.5,
+      "crowding_percentile_3y": 49.0,
+      "ret_5d_pct": -1.1
+    },
+    "电子": {
+      "code": "801080.SI",
+      "turnover_share_pct": 13.8,
+      "crowding_percentile_3y": 86.4,
+      "ret_5d_pct": 2.35
+    },
+    "家用电器": {
+      "code": "801110.SI",
+      "turnover_share_pct": 2.9,
+      "crowding_percentile_3y": 51.4,
+      "ret_5d_pct": 1.85
+    },
+    "食品饮料": {
+      "code": "801120.SI",
+      "turnover_share_pct": 3.4,
+      "crowding_percentile_3y": 46.5,
+      "ret_5d_pct": 1.1
+    },
+    "纺织服饰": {
+      "code": "801130.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "轻工制造": {
+      "code": "801140.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "医药生物": {
+      "code": "801150.SI",
+      "turnover_share_pct": 6.1,
+      "crowding_percentile_3y": 39.8,
+      "ret_5d_pct": 0.4
+    },
+    "公用事业": {
+      "code": "801160.SI",
+      "turnover_share_pct": 2.1,
+      "crowding_percentile_3y": 35.0,
+      "ret_5d_pct": -0.3
+    },
+    "交通运输": {
+      "code": "801170.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "房地产": {
+      "code": "801180.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "商贸零售": {
+      "code": "801200.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "社会服务": {
+      "code": "801210.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "综合": {
+      "code": "801230.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "建筑材料": {
+      "code": "801710.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "建筑装饰": {
+      "code": "801720.SI",
+      "turnover_share_pct": 2.3,
+      "crowding_percentile_3y": 41.0,
+      "ret_5d_pct": 1.65
+    },
+    "电力设备": {
+      "code": "801730.SI",
+      "turnover_share_pct": 7.2,
+      "crowding_percentile_3y": 44.2,
+      "ret_5d_pct": 3.1
+    },
+    "国防军工": {
+      "code": "801740.SI",
+      "turnover_share_pct": 3.7,
+      "crowding_percentile_3y": 58.5,
+      "ret_5d_pct": 1.5
+    },
+    "计算机": {
+      "code": "801750.SI",
+      "turnover_share_pct": 9.4,
+      "crowding_percentile_3y": 79.2,
+      "ret_5d_pct": 1.4
+    },
+    "传媒": {
+      "code": "801760.SI",
+      "turnover_share_pct": 4.1,
+      "crowding_percentile_3y": 72.5,
+      "ret_5d_pct": 0.85
+    },
+    "通信": {
+      "code": "801770.SI",
+      "turnover_share_pct": 4.6,
+      "crowding_percentile_3y": 68.0,
+      "ret_5d_pct": 1.15
+    },
+    "银行": {
+      "code": "801780.SI",
+      "turnover_share_pct": 2.6,
+      "crowding_percentile_3y": 38.5,
+      "ret_5d_pct": 0.45
+    },
+    "非银金融": {
+      "code": "801790.SI",
+      "turnover_share_pct": 5.8,
+      "crowding_percentile_3y": 63.2,
+      "ret_5d_pct": 0.9
+    },
+    "汽车": {
+      "code": "801880.SI",
+      "turnover_share_pct": 5.1,
+      "crowding_percentile_3y": 56.0,
+      "ret_5d_pct": 1.2
+    },
+    "机械设备": {
+      "code": "801890.SI",
+      "turnover_share_pct": 4.8,
+      "crowding_percentile_3y": 34.0,
+      "ret_5d_pct": -0.6
+    },
+    "煤炭": {
+      "code": "801950.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "石油石化": {
+      "code": "801960.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "环保": {
+      "code": "801970.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    },
+    "美容护理": {
+      "code": "801980.SI",
+      "turnover_share_pct": 1.5,
+      "crowding_percentile_3y": 45.0,
+      "ret_5d_pct": 0.0
+    }
+  }
+}

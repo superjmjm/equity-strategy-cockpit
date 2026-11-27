@@ -1,0 +1,19 @@
+name = "equity-cockpit-dispatch"
+main = "worker.mjs"
+compatibility_date = "2026-01-01"
+workers_dev = false
+
+[triggers]
+# 7 days/week (* * *) to cover weekend Sunday strategy wave & holiday make-up trading days:
+# UTC 00:23 (BJT 08:23), UTC 04:23 (BJT 12:23), UTC 09:23 (BJT 17:23) -> report scan
+# UTC 08:37 (BJT 16:37) -> post-close A-share & Shenwan 31-sector crowding refresh
+crons = ["23 0 * * *", "23 4 * * *", "23 9 * * *", "37 8 * * *"]
+
+[vars]
+GITHUB_OWNER = "superjmjm"
+GITHUB_REPO = "equity-strategy-cockpit"
+GITHUB_REF = "main"
+SCHEDULER_ENABLED = "true"
+
+[observability.logs]
+enabled = true

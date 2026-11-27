@@ -1,0 +1,110 @@
+name: Backfill equity report date range
+on:
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: First report date (YYYY-MM-DD, inclusive)
+        required: true
+        type: string
+      end_date:
+        description: Last report date (YYYY-MM-DD, inclusive; 7-14 days recommended)
+        required: true
+        type: string
+      brokers:
+        description: Optional comma-separated brokers (empty = all automatic NXNY brokers)
+        type: string
+      max_downloads:
+        description: Max new NXNY downloads per batch (3-5 recommended for gentle backfill)
+        type: number
+        default: 5
+      dry_run:
+        description: Inventory only (no PDF download or OpenAI calls)
+        type: boolean
+        default: true
+
+permissions: {}
+concurrency:
+  group: ${{ inputs.dry_run && format('equity-range-inventory-{0}', github.run_id) || 'equity-cockpit-update' }}
+  cancel-in-progress: false
+
+jobs:
+  inventory:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      actions: write
+    env:
+      START_DATE: ${{ inputs.start_date }}
+      END_DATE: ${{ inputs.end_date }}
+      BROKERS: ${{ inputs.brokers }}
+      MAX_DOWNLOADS: ${{ inputs.max_downloads }}
+      DRY_RUN: ${{ inputs.dry_run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+          persist-credentials: ${{ !inputs.dry_run }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Inventory Drive and NXNY (/stype_hc/); collect only when dry_run=false
+        id: collect
+        env:
+          GDRIVE_OAUTH_JSON: ${{ secrets.GDRIVE_OAUTH_JSON }}
+          GDRIVE_FOLDER_ID: ${{ vars.GDRIVE_FOLDER_ID }}
+          TINYFISH_API_KEY: ${{ !inputs.dry_run && secrets.TINYFISH_API_KEY || '' }}
+          TINYFISH_PROFILE_ID: ${{ !inputs.dry_run && secrets.TINYFISH_PROFILE_ID || '' }}
+        run: |
+          rc=0
+          python scripts/backfill_range.py || rc=$?
+          echo "partial=$rc" >> "$GITHUB_OUTPUT"
+          if [[ "$rc" != 0 && "$rc" != 2 ]]; then exit "$rc"; fi
+
+      - name: Extract, run Stage 3 synthesis, and commit sharded results
+        id: publish
+        if: ${{ !inputs.dry_run }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-6.2-sol' }}
+        run: |
+          rc=0
+          python scripts/anchored_batch.py || rc=$?
+          if [[ "$rc" != 0 && "$rc" != 2 ]]; then exit "$rc"; fi
+          echo "partial=$rc" >> "$GITHUB_OUTPUT"
+          python scripts/build_public.py "$RUNNER_TEMP/range-proof" --run-stage3
+          mkdir -p data/reports
+          [[ -s data/synthesis_cache.json ]] || echo "{}" > data/synthesis_cache.json
+          PATHS=(data/reports data/synthesis_cache.json ignored_nxny_ids.json)
+          git add -- "${PATHS[@]}"
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m "Backfill equity reports (${START_DATE}..${END_DATE})" -- "${PATHS[@]}"
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase "FETCH_HEAD"
+            git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger GitHub Pages deployment
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update_dashboard.yml --ref "$GITHUB_REF_NAME" -f trigger_source=publish-only
+
+      - name: Write broker inventory table to Step Summary
+        if: always()
+        env:
+          COMMITTED: ${{ steps.publish.outputs.committed }}
+        run: python scripts/backfill_range.py summary
+
+      - name: Flag partial download/extraction
+        if: steps.publish.outputs.partial == '2' || steps.collect.outputs.partial == '2'
+        run: exit 1
