@@ -4,22 +4,19 @@ from __future__ import annotations
 from datetime import date, datetime, timedelta
 import re
 
-# Core buy-side analyst whitelist (default 10 flagship teams)
+# Core buy-side analyst whitelist (7 flagship teams: CITIC + 2022-2025 New Fortune Strategy winners & top non-participating houses)
 CORE_BROKERS = (
     "中信证券",
-    "申万宏源证券",
     "广发证券",
+    "申万宏源证券",
     "国泰海通证券",
-    "中金公司",
+    "国联民生证券",
     "华泰证券",
-    "兴业证券",
-    "中信建投证券",
-    "招商证券",
-    "国信证券",
+    "中金公司",
 )
 
 # Manual / hybrid Drive drop-in brokers (exempt from NXNY ID prefix requirement)
-MANUAL_BROKERS = ("中信证券", "兴业证券", "中金公司", "长江证券")
+MANUAL_BROKERS = ("中信证券", "国联民生证券", "中金公司")
 
 # Series priority weight for Experience 7 same-week same-dimension deduplication
 ROLE_PRIORITY = {
@@ -30,6 +27,7 @@ ROLE_PRIORITY = {
 }
 
 # Empirically audited on NXNY /stype_hc/ (Nov 2026): (series_name, role, pattern)
+# Curated 10 NXNY brokers (+ CITIC manual = 11 total)
 _SERIES: dict[str, tuple[tuple[str, str, str], ...]] = {
     "申万宏源证券": (
         ("策略一周回顾展望", "flagship", r"^策略一周回顾展望(?:[：:\-—]|$)"),
@@ -44,10 +42,26 @@ _SERIES: dict[str, tuple[tuple[str, str, str], ...]] = {
         ("中观景气跟踪", "meso", r"^中观景气跟踪.*?(?:第\d+[期周])?[：:\-—]"),
         ("投资者微观行为洞察", "flow", r"^投资者微观行为洞察手册.*?[：:\-—]"),
     ),
+    "国联民生证券": (
+        ("A股策略周报", "flagship", r"^(?:A股(?:市场|投资)?策略(?:周报|聚焦|观察)?|策略周报|策略定期)(?:[(（][^）)]*[)）])?[：:\-—]"),
+        ("策略行业比较", "meso", r"^(?:行业比较|中观景气|风格配置)(?:周报|跟踪|观察)?[：:\-—]"),
+    ),
     "华泰证券": (
         ("策略国内周报", "flagship", r"^策略国内周报(?![-—]资金透视)[：:\-—]|^策略[：:]|^国内周报[：:]"),
         ("策略资金透视", "flow", r"^策略国内周报[-—]资金透视[：:\-—]"),
         ("中观景气与战术配置月报", "meso", r"^策略月报[：:].*中观景气"),
+    ),
+    "中金公司": (
+        ("A股策略周报", "flagship", r"^(?:A股策略|中国策略简评)[：:\-—]"),
+        ("行业配置月报", "meso", r"^\d{1,2}月行业配置[：:\-—]"),
+    ),
+    "天风证券": (
+        ("A股策略周报", "flagship", r"^A股策略周报[：:\-—]"),
+        ("政策与大类资产周观察", "meso", r"^政策与大类资产配置周观察[：:\-—]"),
+    ),
+    "国金证券": (
+        ("A股策略周报", "flagship", r"^A股策略周报[：:\-—]"),
+        ("月度策略及金股", "golden", r"^(?:[一二三四五六七八九十\d]+月)策略及金股[：:\-—]"),
     ),
     "招商证券": (
         ("A股投资策略周报", "flagship", r"^A股投资策略周报(?:[(（]\d+[)）])?[：:\-—]"),
@@ -60,70 +74,18 @@ _SERIES: dict[str, tuple[tuple[str, str, str], ...]] = {
         ("策略市场周鉴", "meso", r"^(?:策略市场周鉴|行业比较动态追踪.*?)[：:\-—]"),
         ("流动性周观察", "flow", r"^流动性周观察.*?[：:\-—]"),
     ),
-    "中金公司": (
-        ("A股策略周报", "flagship", r"^(?:A股策略|中国策略简评)[：:\-—]"),
-        ("行业配置月报", "meso", r"^\d{1,2}月行业配置[：:\-—]"),
-    ),
-    "国信证券": (
-        ("立体投资策略周报", "flagship", r"^(?:.*?[—\-]+)?\d*月?第?\d*周?立体投资策略周报(?:[：:\-—]|$)"),
-        ("月度金股汇总", "golden", r"^策略快评[：:].*金股"),
-    ),
-    "浙商证券": (
-        ("A股市场运行周报", "flagship", r"^A股市场运行周报第?\d*期?[：:\-—]"),
-        ("板块轮动月报", "meso", r"^板块轮动月报.*?[：:\-—]"),
-    ),
-    "东方证券": (
-        ("策略周度思考", "flagship", r"^策略周度思考[：:\-—]"),
-        ("A股风格及行业配置周报", "meso", r"^(?:A股风格及行业配置周报|主题策略周报)[：:\-—]"),
-    ),
-    "华创证券": (
-        ("策略周聚焦", "flagship", r"^【(?:策略周报|华创策略)】(?:策略周聚焦)?[：:\-—]?"),
-        ("流动性与拥挤度温度计", "flow", r"^流动性&交易拥挤度&投资者温度计周报[：:\-—]"),
-    ),
-    "东吴证券": (
-        ("策略周评", "flagship", r"^(?:策略周评|策略周报)[：:](?!.*(?:美股|港股|恒科|恒指))"),
-        ("主题与产业趋势周展望", "meso", r"^每周主题、产业趋势交易复盘和展望[：:\-—]"),
-        ("月度金股", "golden", r"^策略深度报告[：:].*金股"),
-    ),
-    "开源证券": (
-        ("投资策略周报", "flagship", r"^投资策略周报[：:\-—]"),
-        ("月度金股", "golden", r"^策略投资专题[：:]开源金股"),
-    ),
-    "天风证券": (
-        ("A股策略周报", "flagship", r"^A股策略周报[：:\-—]"),
-        ("政策与大类资产周观察", "meso", r"^政策与大类资产配置周观察[：:\-—]"),
-    ),
-    "平安证券": (
-        ("A股策略周报", "flagship", r"^A股策略周报[：:\-—]"),
-        ("A股资金温度计", "flow", r"^A股资金温度计.*?[：:\-—]"),
-    ),
-    "国金证券": (
-        ("A股策略周报", "flagship", r"^A股策略周报[：:\-—]"),
-        ("月度策略及金股", "golden", r"^(?:[一二三四五六七八九十\d]+月)策略及金股[：:\-—]"),
-    ),
-    "光大证券": (
-        ("策略周专题", "flagship", r"^策略周专题.*?[：:\-—]"),
-    ),
-    "国盛证券": (
-        ("中观景气周报", "meso", r"^行业配置定期[-—]中观景气周报[：:\-—]"),
-    ),
-    "财通证券": (
-        ("A股流动性周报", "flow", r"^流动性周报[：:].*(?:A股|ETF|两融)"),
-    ),
 }
 
 BROKERS = tuple(_SERIES)
 ALL_BROKERS = tuple(dict.fromkeys((*CORE_BROKERS, *BROKERS, *MANUAL_BROKERS)))
 
 _ALIASES = {
-    **dict.fromkeys(("国联民生", "民生证券", "民生", "国联证券"), "国联民生证券"),
+    **dict.fromkeys(("国联民生", "国联民生证券", "民生证券", "民生", "国联证券", "国联"), "国联民生证券"),
     **dict.fromkeys(("国泰海通", "国泰君安", "国泰君安证券", "国君", "海通证券", "海通"), "国泰海通证券"),
     **dict.fromkeys(("申万宏源", "申万宏源研究", "上海申银万国证券研究所", "申万"), "申万宏源证券"),
     **dict.fromkeys(("中信建投", "建投"), "中信建投证券"),
     **dict.fromkeys(("中信", "中信证券", "亮马桥"), "中信证券"),
     **dict.fromkeys(("中金", "中金公司"), "中金公司"),
-    **dict.fromkeys(("兴业", "兴证", "兴业证券"), "兴业证券"),
-    **dict.fromkeys(("长江", "长江证券"), "长江证券"),
     **{broker.removesuffix("证券"): broker for broker in BROKERS},
     **{broker: broker for broker in ALL_BROKERS},
 }
