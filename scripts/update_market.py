@@ -177,7 +177,8 @@ def main() -> int:
             return 0
         raise
 
-    if existing.get("as_of") and fresh["as_of"] < existing["as_of"]:
+    is_demo_seed = "演示" in str(existing.get("source_note") or "")
+    if not is_demo_seed and existing.get("as_of") and fresh["as_of"] < existing["as_of"]:
         print(f"Retaining newer market snapshot {existing['as_of']}")
         return 0
 
