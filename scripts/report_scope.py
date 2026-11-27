@@ -16,7 +16,7 @@ CORE_BROKERS = (
 )
 
 # Manual / hybrid Drive drop-in brokers (exempt from NXNY ID prefix requirement)
-MANUAL_BROKERS = ("中信证券", "国联民生证券", "中金公司")
+MANUAL_BROKERS = ("中信证券", "国联民生证券", "国泰海通证券", "中金公司")
 
 # Series priority weight for Experience 7 same-week same-dimension deduplication
 ROLE_PRIORITY = {
@@ -27,37 +27,28 @@ ROLE_PRIORITY = {
 }
 
 # Empirically audited on NXNY /stype_hc/ (Nov 2026): (series_name, role, pattern)
-# Curated 10 NXNY brokers (+ CITIC manual = 11 total)
+# Curated 10 NXNY brokers (+ CITIC manual = 11 total), flagship comprehensive weekly only (+ monthly golden fallback)
 _SERIES: dict[str, tuple[tuple[str, str, str], ...]] = {
     "申万宏源证券": (
         ("策略一周回顾展望", "flagship", r"^策略一周回顾展望(?:[：:\-—]|$)"),
-        ("行业比较周跟踪", "meso", r"^行业比较周跟踪[：:\-—]"),
     ),
     "广发证券": (
         ("周末五分钟全知道", "flagship", r"^周末五分钟全知道(?:[(（][^）)]*[)）])?[：:\-—]"),
-        ("资配月度展望", "meso", r"^资配月度展望[(（]主观篇[)）][：:\-—]"),
     ),
     "国泰海通证券": (
         ("中国权益策略周报", "flagship", r"^(?:中国权益|A股)策略周报[：:\-—]"),
-        ("中观景气跟踪", "meso", r"^中观景气跟踪.*?(?:第\d+[期周])?[：:\-—]"),
-        ("投资者微观行为洞察", "flow", r"^投资者微观行为洞察手册.*?[：:\-—]"),
     ),
     "国联民生证券": (
         ("A股策略周报", "flagship", r"^(?:A股(?:市场|投资)?策略(?:周报|聚焦|观察)?|策略周报|策略定期)(?:[(（][^）)]*[)）])?[：:\-—]"),
-        ("策略行业比较", "meso", r"^(?:行业比较|中观景气|风格配置)(?:周报|跟踪|观察)?[：:\-—]"),
     ),
     "华泰证券": (
         ("策略国内周报", "flagship", r"^策略国内周报(?![-—]资金透视)[：:\-—]|^策略[：:]|^国内周报[：:]"),
-        ("策略资金透视", "flow", r"^策略国内周报[-—]资金透视[：:\-—]"),
-        ("中观景气与战术配置月报", "meso", r"^策略月报[：:].*中观景气"),
     ),
     "中金公司": (
         ("A股策略周报", "flagship", r"^(?:A股策略|中国策略简评)[：:\-—]"),
-        ("行业配置月报", "meso", r"^\d{1,2}月行业配置[：:\-—]"),
     ),
     "天风证券": (
         ("A股策略周报", "flagship", r"^A股策略周报[：:\-—]"),
-        ("政策与大类资产周观察", "meso", r"^政策与大类资产配置周观察[：:\-—]"),
     ),
     "国金证券": (
         ("A股策略周报", "flagship", r"^A股策略周报[：:\-—]"),
@@ -65,14 +56,9 @@ _SERIES: dict[str, tuple[tuple[str, str, str], ...]] = {
     ),
     "招商证券": (
         ("A股投资策略周报", "flagship", r"^A股投资策略周报(?:[(（]\d+[)）])?[：:\-—]"),
-        ("A股趋势与风格定量观察", "meso", r"^A股趋势与风格定量观察[：:\-—]"),
-        ("行业景气观察", "meso", r"^行业景气观察(?:[(（]\d+[)）])?[：:\-—]"),
-        ("金融市场流动性周报", "flow", r"^金融市场流动性与监管动态周报[：:\-—]"),
     ),
     "中信建投证券": (
-        ("策略周思考", "flagship", r"^(?:策略周思考|一周策略回顾与展望|策略周报\d*年?\d*月?第?\d*期?)(?:[：:\-—]|$)"),
-        ("策略市场周鉴", "meso", r"^(?:策略市场周鉴|行业比较动态追踪.*?)[：:\-—]"),
-        ("流动性周观察", "flow", r"^流动性周观察.*?[：:\-—]"),
+        ("策略周思考", "flagship", r"^策略周思考(?:[：:\-—]|$)"),
     ),
 }
 
