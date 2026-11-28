@@ -192,7 +192,9 @@ def run() -> int:
         manifest[name] = {"drive_file_id": file_id, "channel": "hc"}
 
     partial = False
-    for rid, (broker, title, pages, channel) in list(candidates.items())[:limit]:
+    for idx, (rid, (broker, title, pages, channel)) in enumerate(list(candidates.items())[:limit]):
+        if idx > 0:
+            time.sleep(5)
         name = f"{rid}-{io.name_for(title)}.pdf"
         try:
             raw = io.valid(io.fetch_nxny(rid))

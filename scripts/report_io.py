@@ -292,8 +292,8 @@ def nxny_response_code(data: bytes) -> str:
     return "non_pdf_response"
 
 
-def fetch_nxny(rid: str) -> bytes:
-    """Layer 2 pre-download check + authenticated TinyFish CDP download stream."""
+def _fetch_nxny_once(rid: str) -> tuple[bytes, bool]:
+    """Single TinyFish CDP attempt; returns (pdf_bytes, download_started)."""
     import base64
     from playwright.sync_api import sync_playwright
 
@@ -303,23 +303,40 @@ def fetch_nxny(rid: str) -> bytes:
     api = f"https://agent.tinyfish.ai/v1/profiles/{profile}/setup-session"
     auth = {"X-API-Key": env("TINYFISH_API_KEY")}
     detail = f"https://www.nxny.com/report/view_{rid}.html"
-    response = requests.post(api, headers=auth, json={"url": detail, "timeout_seconds": 180}, timeout=70)
-    response.raise_for_status()
-    session = response.json()
+    stage = "setup_session"
+    download_started = False
+    try:
+        response = requests.post(api, headers=auth, json={"url": detail, "timeout_seconds": 180}, timeout=70)
+        response.raise_for_status()
+        session = response.json()
+    except Exception as exc:
+        exc._nxny_stage = stage
+        exc._nxny_download_started = False
+        raise
     try:
         with sync_playwright() as pw:
+            stage = "connect_cdp"
             browser = pw.chromium.connect_over_cdp(session["cdp_url"], timeout=60000)
             context = browser.contexts[0]
             page = context.pages[0] if context.pages else context.new_page()
-            page.goto(detail, wait_until="domcontentloaded", timeout=45000)
+            stage = "goto_detail"
+            if f"/report/view_{rid}.html" in (page.url or ""):
+                page.wait_for_load_state("domcontentloaded", timeout=45000)
+            else:
+                page.goto(detail, wait_until="domcontentloaded", timeout=45000)
+            stage = "check_format"
             extension = declared_report_format(page.locator("body").inner_text(timeout=15000))
             if extension is None:
                 raise NXNYDownloadError("detail_format_missing")
             if extension != "pdf":
                 raise NonPDFReport(extension)
+            stage = "check_login"
             page.locator("#loginstr2").filter(has_text="退出登录").wait_for(timeout=15000)
+            stage = "find_link"
             hrefs = page.locator("a[href]").evaluate_all("els => els.map(a=>a.href)")
             link = nxny_download_link(hrefs)
+            stage = "download_stream"
+            download_started = True
             cdp = context.new_cdp_session(page)
             frame = cdp.send("Page.getFrameTree")["frameTree"]["frame"]["id"]
             result = cdp.send(
@@ -356,7 +373,13 @@ def fetch_nxny(rid: str) -> bytes:
                     print("::warning::NXNY download stream cleanup failed")
             if not pdf.startswith(b"%PDF-"):
                 raise NXNYDownloadError(nxny_response_code(pdf))
-            return bytes(pdf)
+            return bytes(pdf), download_started
+    except (NonPDFReport, NXNYDownloadError):
+        raise
+    except Exception as exc:
+        exc._nxny_stage = stage
+        exc._nxny_download_started = download_started
+        raise
     finally:
         try:
             requests.post(
@@ -367,6 +390,24 @@ def fetch_nxny(rid: str) -> bytes:
             ).raise_for_status()
         except Exception:
             print("::warning::NXNY browser session cleanup failed")
+
+
+def fetch_nxny(rid: str) -> bytes:
+    """Layer 2 pre-download check + authenticated TinyFish CDP download stream."""
+    for attempt in range(2):
+        try:
+            pdf, _ = _fetch_nxny_once(rid)
+            return pdf
+        except (NonPDFReport, NXNYDownloadError, ValueError):
+            raise
+        except Exception as exc:
+            stage = getattr(exc, "_nxny_stage", "unknown")
+            download_started = getattr(exc, "_nxny_download_started", True)
+            print(f"::warning::NXNY session issue for {rid} at stage={stage} ({type(exc).__name__}, attempt={attempt + 1})")
+            if attempt == 0 and not download_started:
+                time.sleep(8)
+                continue
+            raise
 
 
 def save_recovered(filename: str, raw: bytes) -> None:
