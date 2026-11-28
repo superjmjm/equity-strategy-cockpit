@@ -1,0 +1,304 @@
+{
+  "broker": "中金公司",
+  "series": "A股策略周报",
+  "series_role": "flagship",
+  "title": "A股策略：资金流全景动态监测",
+  "report_date": "2026-10-18",
+  "week_mon": "2026-10-19",
+  "is_core": true,
+  "report_id": "5db6284fbc86d9616ceb4b9311d823329d2db357efa1ac1d40fdbee77bdc2ec7",
+  "total_pages": 2,
+  "report_meta": {
+    "archetype": "liquidity_crowding",
+    "one_line_takeaway": "宽基ETF逆市流入，但主动公募新发和两融交易降温；报告判断A股短期仍需等待积极信号，中期盈利修复与机构增配仍有望提供支撑。"
+  },
+  "market_stance_slot": {
+    "evidence_pids": [
+      "P1-S40",
+      "P1-S42"
+    ],
+    "index_target": null,
+    "marginal_shift_note": "本期延续此前“短期逆风较强、等待积极信号”的判断，并明确国内基本面与中期逻辑未变，未提出仓位调整。",
+    "position_guidance": "unspecified",
+    "self_declared_shift": "maintain_stance",
+    "stance_tier": "neutral_range",
+    "thesis_summary": "短期外部扰动或仍延续，资金面修复需跟踪地缘局势和三季度业绩；中期估值回稳与盈利修复仍有望支撑A股，对中期走势不必悲观。",
+    "vote_eligible": true,
+    "evidence": [
+      {
+        "pid": "P1-S40",
+        "page": 1,
+        "heading": "A / A",
+        "text": "股市场受外部扰动与资金面压力影响，表现相对偏弱，我们在此前报告《短期\n“\n逆风\n”\n较强，等待积极信号》中指\n出，短期来看，外部扰动因素或仍延续，中东地缘局势持续紧张，美债利率难以快速下行，投 资者对于\nAI \n产业链业绩及投 资回\n报观望情绪升温，市场交投 情绪受到影响，未来关注地缘局势改善以及三季度业绩落地等有望支撑市场表现，推动资金面修复。\n中期而言，我们认为估值回稳与盈利修复仍有望为市场提供支撑，全球货币秩序重构与科技叙事对",
+        "truncated": false
+      },
+      {
+        "pid": "P1-S42",
+        "page": 1,
+        "heading": "A / A",
+        "text": "股仍有支持，国内基本面与\n中期逻辑并未改变，对市场中期走势不必悲观，且伴随政策红利持续释放与资本市场改革深化，基金、保险等机构对",
+        "truncated": false
+      }
+    ]
+  },
+  "ddm_driver_slots": {
+    "earnings_macro_slot": {
+      "canonical_topic": "ppi_earnings_roe",
+      "claim_summary": "作者认为盈利修复仍有望为A股中期表现提供支撑，未据此判断修复已全面展开。",
+      "direction": "bullish_support",
+      "evidence_pids": [
+        "P1-S40"
+      ],
+      "vote_eligible": true,
+      "evidence": [
+        {
+          "pid": "P1-S40",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股市场受外部扰动与资金面压力影响，表现相对偏弱，我们在此前报告《短期\n“\n逆风\n”\n较强，等待积极信号》中指\n出，短期来看，外部扰动因素或仍延续，中东地缘局势持续紧张，美债利率难以快速下行，投 资者对于\nAI \n产业链业绩及投 资回\n报观望情绪升温，市场交投 情绪受到影响，未来关注地缘局势改善以及三季度业绩落地等有望支撑市场表现，推动资金面修复。\n中期而言，我们认为估值回稳与盈利修复仍有望为市场提供支撑，全球货币秩序重构与科技叙事对",
+          "truncated": false
+        }
+      ]
+    },
+    "liquidity_chip_slot": {
+      "canonical_topic": "etf_institutional_inflow",
+      "claim_summary": "随着政策红利释放和资本市场改革深化，基金、险资的A股配置比例仍有提升空间，外资低配也有望逐步改善，中长期仍有增量资金空间。",
+      "direction": "bullish_support",
+      "evidence_pids": [
+        "P1-S42",
+        "P1-S44",
+        "P1-S46"
+      ],
+      "vote_eligible": true,
+      "evidence": [
+        {
+          "pid": "P1-S42",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股仍有支持，国内基本面与\n中期逻辑并未改变，对市场中期走势不必悲观，且伴随政策红利持续释放与资本市场改革深化，基金、保险等机构对",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S44",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股的配置\n比例仍有提升空间，海外资金对",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S46",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股的低配状态也有望逐步改善，中长期增量资金仍有空间。",
+          "truncated": false
+        }
+      ]
+    },
+    "policy_risk_slot": {
+      "canonical_topic": "tariff_geopolitics_risk",
+      "claim_summary": "中东地缘局势短期仍可能偏紧，外部扰动尚未消退，市场交投情绪仍承压。",
+      "direction": "bearish_drag",
+      "evidence_pids": [
+        "P1-S40"
+      ],
+      "vote_eligible": true,
+      "evidence": [
+        {
+          "pid": "P1-S40",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股市场受外部扰动与资金面压力影响，表现相对偏弱，我们在此前报告《短期\n“\n逆风\n”\n较强，等待积极信号》中指\n出，短期来看，外部扰动因素或仍延续，中东地缘局势持续紧张，美债利率难以快速下行，投 资者对于\nAI \n产业链业绩及投 资回\n报观望情绪升温，市场交投 情绪受到影响，未来关注地缘局势改善以及三季度业绩落地等有望支撑市场表现，推动资金面修复。\n中期而言，我们认为估值回稳与盈利修复仍有望为市场提供支撑，全球货币秩序重构与科技叙事对",
+          "truncated": false
+        }
+      ]
+    }
+  },
+  "style_slots": {
+    "size_style_slot": null,
+    "valuation_style_slot": null
+  },
+  "sector_allocation_slot": {
+    "overweight_lines": [],
+    "cautious_lines": []
+  },
+  "data_nuggets_slot": [
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": false,
+      "evidence_pids": [
+        "P1-S14",
+        "P1-S15"
+      ],
+      "forward_implication": "宽基ETF在两轮市场走弱时均有资金承接，近期流入同时覆盖沪深300、科创50和创业板指，不能据此判定风格已单向切换。",
+      "metric_phrase": "19只重点宽基ETF在7月净流入逾1880亿元，其中7月13—20日市场加速下行期间净流入1496亿元；10月8日至报告时点再净流入876亿元。",
+      "evidence": [
+        {
+          "pid": "P1-S14",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股票型\nETF\n：\nETF \n资金显现逆市净增持。\n7 \n月市场波动较大期间，我们统计的\n19 \n支重点宽基\nETF7 \n月单月累计净流入超\n1880 \n亿元，其中\n7 \n月\n13 \n日至\n7 \n月\n20 \n日市场下行加速期间累计净流入\n1496 \n亿元。近期市场震荡期间，重点宽基\nETF \n再度放\n量，\n10 \n月\n8 \n日至今累计净流入\n876 \n亿元。",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S15",
+          "page": 1,
+          "heading": "A / A",
+          "text": "拆分不同指数来看，重点沪深\n300ETF \n净流入规模超\n400 \n亿元，同时重点科创\n50 \n和创业板指\nETF\n净流入超\n360 \n亿元。",
+          "truncated": false
+        }
+      ],
+      "primary_page": 1
+    },
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": false,
+      "evidence_pids": [
+        "P1-S9",
+        "P1-S11",
+        "P1-S13"
+      ],
+      "forward_implication": "仓位抬升不等于资金净流入；后续应分别跟踪三季度基金仓位变化、配置调整及科技持仓拥挤度。",
+      "metric_phrase": "三季度偏股基金月均新发由二季度的781亿份降至457亿份；二季度主动偏股基金估算净赎回2628亿元，但存量基金A股仓位同期由73.9%升至78%。",
+      "evidence": [
+        {
+          "pid": "P1-S9",
+          "page": 1,
+          "heading": "A / A",
+          "text": "公募主动类资金：主动基金新发及申赎表现均有所回落。新发维度，\n3Q26 \n月均新发偏股型基金\n457 \n亿份（\nvs. 2Q26 781\n亿份），\n10 \n月新发\n62 \n亿份（截至\n10 \n月\n15 \n日）。申赎维度，我们通过基金份额和区间净值数据估算，二季度主动偏股型基金净\n赎回规模扩张至\n2628 \n亿元。配置层面，去年下半年至今",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S11",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股配置比例持续抬升，截至\n2Q26\n，",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S13",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股仓位由上季度的\n73.9%\n明显上\n升至\n78%\n，近期需要关注三季度基金仓位的总体变化及配置调整情况，尤其是市场关注度较高的科技拥挤度情况。",
+          "truncated": false
+        }
+      ],
+      "primary_page": 1
+    },
+    {
+      "category": "flow_crowding",
+      "chart_likely_on_page": false,
+      "evidence_pids": [
+        "P1-S16",
+        "P1-S18",
+        "P1-S20",
+        "P1-S22"
+      ],
+      "forward_implication": "融资余额和成交占比同步下降，可用来跟踪杠杆交易活跃度是否回暖，但不能单独作为市场见底信号。",
+      "metric_phrase": "融资余额由6月底3万亿元的历史高位降至2.5万亿元以下；10月以来两融成交占比均值为8%，低于三季度的8.9%。",
+      "evidence": [
+        {
+          "pid": "P1-S16",
+          "page": 1,
+          "heading": "A / A",
+          "text": "两融资金：融资余额有所回落，交易额占比同步下行。融资余额通常与市场表现呈现正相关，二季度融资余额快速上行，\n至\n6 \n月底融资余额达\n3 \n万亿元，创历史新高。\n7 \n月以来",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S18",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股市场震荡调整，融资余额由此前高点逐步回落至\n2.5 \n万亿元以下。\n1\n）\n从市值上看，截至\n10 \n月\n15 \n日，融资余额占",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S20",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股市场自由流通市值比重达\n5.3%\n，较\n3Q26 \n的\n5.16%\n有所回落，但仍高于\n2014 \n年\n以来的均值\n4.78%\n；\n2\n）从成交上看，\n10 \n月以来两融交易额占",
+          "truncated": false
+        },
+        {
+          "pid": "P1-S22",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股总成交额均值为\n8%\n，较\n3Q26 \n的\n8.9%\n边际下行。",
+          "truncated": false
+        }
+      ],
+      "primary_page": 1
+    }
+  ],
+  "catalysts_slot": [
+    {
+      "event_title": "中东地缘局势改善",
+      "evidence_pids": [
+        "P1-S40"
+      ],
+      "scenario_impact": "若局势缓和，外部扰动有望减轻，为交投情绪和资金面修复提供支持。",
+      "time_window": "短期，未给出明确日期",
+      "evidence": [
+        {
+          "pid": "P1-S40",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股市场受外部扰动与资金面压力影响，表现相对偏弱，我们在此前报告《短期\n“\n逆风\n”\n较强，等待积极信号》中指\n出，短期来看，外部扰动因素或仍延续，中东地缘局势持续紧张，美债利率难以快速下行，投 资者对于\nAI \n产业链业绩及投 资回\n报观望情绪升温，市场交投 情绪受到影响，未来关注地缘局势改善以及三季度业绩落地等有望支撑市场表现，推动资金面修复。\n中期而言，我们认为估值回稳与盈利修复仍有望为市场提供支撑，全球货币秩序重构与科技叙事对",
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "event_title": "三季度业绩落地",
+      "evidence_pids": [
+        "P1-S40"
+      ],
+      "scenario_impact": "业绩披露是观察市场能否缓解对AI产业链业绩及投资回报的观望、推动资金面修复的节点。",
+      "time_window": "近期三季报披露期",
+      "evidence": [
+        {
+          "pid": "P1-S40",
+          "page": 1,
+          "heading": "A / A",
+          "text": "股市场受外部扰动与资金面压力影响，表现相对偏弱，我们在此前报告《短期\n“\n逆风\n”\n较强，等待积极信号》中指\n出，短期来看，外部扰动因素或仍延续，中东地缘局势持续紧张，美债利率难以快速下行，投 资者对于\nAI \n产业链业绩及投 资回\n报观望情绪升温，市场交投 情绪受到影响，未来关注地缘局势改善以及三季度业绩落地等有望支撑市场表现，推动资金面修复。\n中期而言，我们认为估值回稳与盈利修复仍有望为市场提供支撑，全球货币秩序重构与科技叙事对",
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "event_title": "2026金融街论坛年会",
+      "evidence_pids": [
+        "P2-S2"
+      ],
+      "scenario_impact": "金融管理部门将集中发布系列金融改革发展政策，重点观察改革与开放合作的具体安排。",
+      "time_window": "2026年10月19日至22日",
+      "evidence": [
+        {
+          "pid": "P2-S2",
+          "page": 2,
+          "heading": "A / A",
+          "text": "近期关注以下进展：\n1\n）\n2026 \n金融街论坛年会将于\n10 \n月\n19 \n日至\n22 \n日在北京金融街举办\n1\n，主题为\n“\n开放\n·\n合作\n·\n包容\n——\n共\n筑全球金融发展新生态\n”\n，在制度标准、机构平台、开放合作等方面，百余项成果将于本届论坛年会首发。央行行长潘功胜、金\n融监管总局局长丁向群、证监会主席吴清、国家外汇局局长朱鹤新将出席\n2026 \n金融街论坛年会并作主题演讲。论坛年会期间，\n国家金融管理部门将集中发布系列金融改革发展政策。\n2\n）我国\n9 \n月部分经济及金融数据发布。物价方面，\n9 \n",
+          "truncated": true
+        }
+      ]
+    }
+  ],
+  "golden_stocks_slot": [],
+  "risk_invalidator_slot": {
+    "risk_summary": "若中东局势持续紧张、美债利率迟迟不下行，且三季度业绩落地后仍未缓解市场对AI产业链投资回报的疑虑，短期交投情绪与资金面修复可能推迟。",
+    "evidence_pids": [
+      "P1-S40"
+    ],
+    "evidence": [
+      {
+        "pid": "P1-S40",
+        "page": 1,
+        "heading": "A / A",
+        "text": "股市场受外部扰动与资金面压力影响，表现相对偏弱，我们在此前报告《短期\n“\n逆风\n”\n较强，等待积极信号》中指\n出，短期来看，外部扰动因素或仍延续，中东地缘局势持续紧张，美债利率难以快速下行，投 资者对于\nAI \n产业链业绩及投 资回\n报观望情绪升温，市场交投 情绪受到影响，未来关注地缘局势改善以及三季度业绩落地等有望支撑市场表现，推动资金面修复。\n中期而言，我们认为估值回稳与盈利修复仍有望为市场提供支撑，全球货币秩序重构与科技叙事对",
+        "truncated": false
+      }
+    ]
+  },
+  "numeric_warnings": [],
+  "intercepted_slots": [],
+  "source_file": "6502993-中金公司-A股策略：资金流全景动态监测-261018.pdf",
+  "listing_pages": 2
+}
